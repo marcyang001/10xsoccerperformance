@@ -7,7 +7,7 @@ var path = require('path');
 var app = express();
 
 function getClientAddress(req) {
-  return req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  return rreq.headers['x-forwarded-for'] || req.connection.remoteAddress;
 }
 
 
@@ -70,6 +70,7 @@ if (module === require.main) {
     var port = server.address().port;
 
     console.log('App listening at http://%s:%s', host, port);
+
   });
   // [END server]
 }

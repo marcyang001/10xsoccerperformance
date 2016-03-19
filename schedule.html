@@ -30,8 +30,8 @@
 						<div class="social-media-icons">
 						<ul class="navright">
 							<li><a href="https://www.facebook.com/10XSoccerPerformance" target="_blank"><img src="./Pictures/social-media-icons/facebook.png" alt="Facebook" border="0"/></a></li>
-							<li><a href="https://twitter.com/10XSoccer"><img src="./Pictures/social-media-icons/twitter.png" alt="Twitter" border="0"/></a></li>
-							<li><a href="https://www.youtube.com/user/BakanD"><img src="./Pictures/social-media-icons/youtube.png" alt="Youtube" border="0"/></a></li>
+							<li><a href="https://twitter.com/10XSoccer" target="_blank"><img src="./Pictures/social-media-icons/twitter.png" alt="Twitter" border="0"/></a></li>
+							<li><a href="https://www.youtube.com/user/BakanD" target="_blank"><img src="./Pictures/social-media-icons/youtube.png" alt="Youtube" border="0"/></a></li>
 							<li><a href="https://instagram.com/"><img src="./Pictures/social-media-icons/instagram.png" alt="Youtube" border="0"/></a></li>
 						</ul>
 						</div>
@@ -82,7 +82,7 @@
 									result = document.getElementById('mySearch').value;
 									//var res = new RegExp('ab+c', 'i');
 									if (result == '' || result == ' ' || result == '  '){
-										//alert('hello')
+										//error handler
 									}
 									//open the window in google with the search input
 									else {
@@ -91,17 +91,58 @@
 								}
 							</script>
 
-
-
-
 				    </div>
 				  </div>
 				
 
 				</nav>
 
+
+				<!-- Google Map -->
+				<div id="map" style="position: relative; left: 150px"></div>
+  				<script>
+  					function initMap() {
+			  			//obtain the div name id map
+			  			var mapDiv = document.getElementById('map');
+			  			//identify the location for Parc d'Auteuil
+			  			var parcdAuteuil = {lat: 45.5486598, lng: -73.656954};
+			  			// identify the location for Parc Julien
+			  			var parcHenryJulien = {lat: 45.547294, lng: -73.650117};	
+			  			
+			  			var parcSaintBenoit = {lat: 45.541033, lng: -73.665384}
+
+			  			//45.541033, -73.665384
+			  			//create a new Google Maps object
+			  			var map = new google.maps.Map(mapDiv, {
+			      			center: {lat: 45.5486598, lng: -73.656954},
+			      			zoom: 14
+			    		});
+			    		//center is a Google Maps
+			    		//LatLngLiteral object that tells the the API where to center the map.
+			    		//zoom is a number between 0 (farthest) and 22 that sets the zoom level of the map.
+			    		var marker1 = new google.maps.Marker({
+    						position: parcdAuteuil,
+    						map: map,
+    						title: 'Parc dAuteil'
+  						});
+  						var marker2 = new google.maps.Marker({
+    						position: parcHenryJulien,
+    						map: map,
+    						title: 'Parc Julien'
+  						});
+  						var marker2 = new google.maps.Marker({
+    						position: parcSaintBenoit,
+    						map: map,
+    						title: 'Parc Saint Benoit'
+  						});
+  					}
+				</script>
+  				<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        			async defer></script>
+
+
 				<!--Insert the table   -->
-				<BR>
+				<BR>				
 				<div style="position: relative; left: -230px">
 				<b>Main Locations</b>: 
 					<ul style="position: relative; left: 100px">
@@ -110,12 +151,13 @@
   						Parc Saint-Benoît
 					</ul>
 					<BR>
-				<b>Regular timeslot for reservations: </b>: 
+				<b>Regular timeslot for reservations: </b> 
 					<ul style="position: relative; left: 100px">
   						<u>Mon - Fri</u>: 4pm - 6pm<BR>
   						<u>Sat - Sun</u>: 8am - 10am, 4pm - 6pm <BR>
 					</ul>
-				</div>			
+				</div>
+
 				<BR>
 				<BR>
 				<div class="col-sm-6 col-md-12" id="announce" name="announce">

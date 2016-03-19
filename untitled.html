@@ -1,13 +1,40 @@
-<html> 
-<head>
+<!DOCTYPE html>
+<html>
+  <head>
+  	<style>
+      #map {
+        width: 500px;
+        height: 400px;
+        background-color: #CCC;
+      }
+    </style>
 
-</head>
+  </head>
+  <body>
+  	<div id="map"></div>
+  	<script>
+  		function initMap() {
+  			//obtain the div name id map
+  			 var mapDiv = document.getElementById('map');
+  			 var parcdAuteuil = {lat: 45.5486598, lng: -73.656954};
+  			//create a new Google Maps object
+  			var map = new google.maps.Map(mapDiv, {
+      			center: {lat: 45.5486598, lng: -73.656954},
+      			zoom: 14
+    		});
+    		//center is a Google Maps
+    		//LatLngLiteral object that tells the the API where to center the map.
+    		//zoom is a number between 0 (farthest) and 22 that sets the zoom level of the map.
+  		
+    		var marker = new google.maps.Marker({
+    			position: parcdAuteuil,
+    			map: map,
+    			title: 'Hello World!'
+  			});
+  		}
+	</script>
+  	<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer></script>
 
-<body>
-<h1> Hello World</h1>
-
-</body>
-
-
-
+  </body>
 </html>

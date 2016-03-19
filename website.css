@@ -144,6 +144,12 @@ span.soccer{
 	background-color: rgb(170,170, 170);
 }
 
+#map {
+        width: 500px;
+        height: 400px;
+        background-color: #CCC;
+}
+
 div.footer {
     color: black;
     width: 100%;

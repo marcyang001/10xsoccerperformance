@@ -7,7 +7,7 @@ var path = require('path');
 var app = express();
 
 function getClientAddress(req) {
-  return rreq.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  return req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 }
 
 

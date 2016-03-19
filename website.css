@@ -150,6 +150,40 @@ span.soccer{
         background-color: #CCC;
 }
 
+#subscribelogos {
+	background-color: white;
+	overflow: hidden;
+	margin-top: 0px;
+	width: auto\9;
+	height: 50px;
+
+
+}
+#subscribelogos div.socialLogos ul.navright li {
+	display: inline-block;
+	list-style-type: none;
+	margin: 0 0px 0px 10px;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s; 
+	position: center;
+
+
+}
+
+
+#subscribelogos div.socialLogos ul.navright li a img{
+	width: 40px;
+	height: 40px;
+	padding-top: 0 !important; 
+    padding-bottom:0px;
+    min-height: 10px;
+
+}
+
+
 div.footer {
     color: black;
     width: 100%;

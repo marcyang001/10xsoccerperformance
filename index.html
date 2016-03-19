@@ -112,15 +112,31 @@
 
 				<div style="position: relative; top: -20px">
 					<!--Main picture-->
-					<img id="mainImage" class="pic" src="./Pictures/grass.jpg" alt="Grass" width="900" height="500" onmouseover = "showArrows()" onmouseout = "hideArrows()"/>
+					<img id="mainImage" class="pic" src="./Pictures/Mainslides/image1.jpg" alt="Grass" width="900" height="500" onmouseover = "showArrows()" onmouseout = "hideArrows()"/>
 					<!--Transparent arrows-->
-					<img id="LeftArrow" src="./Pictures/arrow.png" onclick="prePic()" width="75" height="75" style="position: relative; visibility:hidden; top: -290px; left: -350px" onmouseover = "showArrows()"></img>
-					<img id="RightArrow" src="./Pictures/arrowR.png" onclick="nextPic()" width="75" height="75" style="position: relative; visibility:hidden; top: -290px; right: -350px;" onmouseover = "showArrows()"></img>
+					<img id="LeftArrow" src="./Pictures/Arrows/arrow.png" onclick="prePic()" width="75" height="75" style="position: relative; visibility:hidden; top: -290px; left: -350px" onmouseover = "showArrows()"></img>
+					<img id="RightArrow" src="./Pictures/Arrows/arrowR.png" onclick="nextPic()" width="75" height="75" style="position: relative; visibility:hidden; top: -290px; right: -350px;" onmouseover = "showArrows()"></img>
 				</div>
 				<script>
-					var images = ["Pictures/grass.jpg", "Pictures/headbut.png","Pictures/endurance.png", "Pictures/soccerball.jpg"];
-					
+					var images = ["Pictures/Mainslides/image1.jpg", "Pictures/Mainslides/image2.jpg","Pictures/Mainslides/image3.jpg", "Pictures/Mainslides/image4.jpg"];
+					//var images = getFiles('./Pictures/Mainslides');
 					var x = -1;
+					/*
+					function getFiles(dir){
+					    var fs = require('fs');
+					    var fileList = [];
+					    
+					    var files = fs.readdirSync(dir);
+					    for(var i in files){
+					        var name = dir+'/'+files[i];
+					        if (!fs.statSync(name).isDirectory()){
+					            fileList.push(name);
+					        }
+					    }
+    					return fileList;
+					}
+					*/
+					
 					function nextPic() {
 						
 						image = document.getElementById('mainImage').src;
@@ -166,7 +182,6 @@
 				<BR>
 				<div class="footer" role="contentinfo">
         			&copy; Copyright 2015, Principal Designed By Marc Yang.
-        			Front-page credit to Ted Chan
     			</div>
 
 

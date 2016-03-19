@@ -58,7 +58,7 @@ app.get('/',function (request, response) {
 /* serves all the static files */
  app.get(/^(.+)$/, function(req, res){ 
      console.log('other files : ' + req.params);
-     res.sendfile( __dirname + req.params[0]); 
+     res.sendFile( __dirname + req.params[0]); 
  });
 
 

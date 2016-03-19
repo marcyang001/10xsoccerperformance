@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>10X Soccer Performance</title>
+
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+   		
+
+
+		<link href="website.css" rel="stylesheet">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	</head>
+	
+	
+	<body bgcolor="white">
+			<div class="wrapper">
+					<div class="navbar-header">
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+		        	</div>
+
+					<nav id="mainNavbar">
+						<div class="social-media-icons">
+						<ul class="navright">
+							<li><a href="https://www.facebook.com/10XSoccerPerformance" target="_blank"><img src="./Pictures/social-media-icons/facebook.png" alt="Facebook" border="0"/></a></li>
+							<li><a href="https://twitter.com/10XSoccer"><img src="./Pictures/social-media-icons/twitter.png" alt="Twitter" border="0"/></a></li>
+							<li><a href="https://www.youtube.com/user/BakanD"><img src="./Pictures/social-media-icons/youtube.png" alt="Youtube" border="0"/></a></li>
+							<li><a href="https://instagram.com/"><img src="./Pictures/social-media-icons/instagram.png" alt="Youtube" border="0"/></a></li>
+						</ul>
+						</div>
+					</nav>
+
+				<div id="logogrid">
+					<div id="title"><span class="10X">10X</span> <span class="soccer"> SOCCER PERFORMANCE</span></div>
+					<a href="http://www.10xsoccerperformance.com"><img id="logopic" src="./Pictures/mainlogo.png"/></a>
+				</div>
+
+
+
+			
+		<!--Tabs  -->		
+				<nav class="navbar navbar-default">
+				  <div class="container-fluid">
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				      <a class="navbar-brand" href="index.html">10X Soccer</a>
+				    </div>
+
+				    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+				      <ul class="nav navbar-nav">
+				      	<li ><a class="btn" href="about.html">About</a></li>
+				        <li><a class="btn" href="schedule.html">Schedule</a></li>
+				        <li>
+				          <a class="btn" href="contact.html">Contact</a>
+				        </li>
+				      </ul>
+				      <form class="navbar-form navbar-left" role="search">
+				        <div class="form-group">
+				          <input  name="result" type="text" id="mySearch" class="form-control" placeholder="Search results">
+				        </div>
+				        <button onclick="searchResults()" type="submit" class="btn btn-default">Search</button>
+				      </form>
+
+				      		<script>
+								
+								function searchResults() {
+									var r, result; 
+									//var re = /(\w+)\s(\w+)/;
+									//get the value of the input 
+									result = document.getElementById('mySearch').value;
+									//var res = new RegExp('ab+c', 'i');
+									if (result == '' || result == ' ' || result == '  '){
+										//alert('hello')
+									}
+									//open the window in google with the search input
+									else {
+										window.open('http://google.com/search?q='+result);
+									}
+								}
+							</script>
+
+
+
+
+				    </div>
+				  </div>
+				
+
+				</nav>
+
+				<!--Insert the table   -->
+				<BR>
+				<div style="position: relative; left: -230px">
+				<b>Main Locations</b>: 
+					<ul style="position: relative; left: 100px">
+  						Parc d'Auteuil <BR>
+  						Parc Henri-Julien <BR>
+  						Parc Saint-Benoît
+					</ul>
+					<BR>
+				<b>Regular timeslot for reservations: </b>: 
+					<ul style="position: relative; left: 100px">
+  						<u>Mon - Fri</u>: 4pm - 6pm<BR>
+  						<u>Sat - Sun</u>: 8am - 10am, 4pm - 6pm <BR>
+					</ul>
+				</div>			
+				<BR>
+				<BR>
+				<div class="col-sm-6 col-md-12" id="announce" name="announce">
+            		
+            		<div class="row white">
+
+	                	<table class="table table-hover table-bordered" bgcolor="white">
+	                	<thead>
+	                    	<tr><th>Date</th><th>Time</th><th>Events</th></tr>
+	                	</thead>
+	                	<tbody>
+		                    <!--First row -->
+		                    <tr><td>Aug 29, 2015</td><td>8:00am - 10:00pm</td><td>Reserved training</td></tr>
+		                    <!--Second row -->
+		                    <tr><td>Aug 30, 2015</td><td>8:00am - 10:00pm</td><td>Regular Training</td></tr>
+		                    
+		                </tbody>
+		                </table>
+	            	</div><!-- row -->
+	        	
+
+
+
+
+					<!--foot note -->
+					<div class="footer" role="contentinfo">
+	        			&copy; Copyright 2015, Principal Designed By Marc Yang.
+	    			</div>
+    			</div> <!-- container -->
+
+		<!-- Wrapper class ends-->
+			</div>
+		<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="./dist/js/bootstrap.min.js"></script>
+
+
+
+	</body>
+
+</html>

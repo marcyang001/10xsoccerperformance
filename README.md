@@ -5,12 +5,26 @@
 
 This is for my friend's soccer training camp. 
 
-Here is what it looks like on the web portal. 
+Here is the url: . 
 
-http://www.cs.mcgill.ca/~myang33/10xsoccerperformance
+http://www.10xsoccerperformance.com
 
+Running The app on your local machine
 
-The video link: 
+    Install dependencies for this project by entering the following command:
 
-https://www.youtube.com/watch?v=Ni_9uv_n59Y
-Append this to the website
+    $ npm install
+
+    Run the start script.
+
+    $ npm start
+
+    In your web browser, enter the following address:
+
+    http://localhost:8080
+
+Running the app on Google App Engine
+
+To deploy the app, enter this command:
+
+$ gcloud preview app deploy

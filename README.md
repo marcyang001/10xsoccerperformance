@@ -27,4 +27,4 @@ Running the app on Google App Engine
 
 To deploy the app, enter this command:
 
-$ gcloud preview app deploy
+	$ gcloud preview app deploy

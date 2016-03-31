@@ -2,7 +2,7 @@ var express = require('express');
 var fs = require('fs');
 var os = require('os');
 var path = require('path');
-
+var favicon = require('serve-favicons');
 
 var app = express();
 
@@ -10,6 +10,8 @@ function getClientAddress(req) {
   return req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 }
 
+//get the favicon.ico of the site 
+app.use(favicon(__dirname + '/Pictures/favicon.ico'));
 
 app.get('/',function (request, response) {
 	
@@ -60,6 +62,8 @@ app.get('/',function (request, response) {
      console.log('other files : ' + req.params);
      res.sendFile( __dirname + req.params[0]); 
  });
+
+
 
 
 if (module === require.main) {

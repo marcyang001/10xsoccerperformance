@@ -51,10 +51,10 @@
 
 				<div id="logogrid">
 					<div id="title"><span class="10X">10X</span> <span class="soccer"> SOCCER PERFORMANCE</span></div>
-					<a href="http://www.10xsoccerperformance.com"><img id="logopic" src="./Pictures/mainlogo.png"/>
+					<a href="http://www.10xsoccerperformance.com"><img id="logopic" src="./Pictures/mainlogo.png"/></a>
 				</div>
 
-
+				
 
 			
 		<!--Tabs  -->		
@@ -106,101 +106,30 @@
 				  </div>
 				
 				</nav>
-
-				<!--image slides -->
-
-				<div style="position: relative; top: -20px">
-					<!--Main picture-->
-					<img id="mainImage" class="pic" src="./Pictures/Mainslides/image1.jpg" alt="Grass" width="900" height="500" onmouseover = "showArrows()" onmouseout = "hideArrows()"/>
-					<!--Transparent arrows-->
-					<img id="LeftArrow" src="./Pictures/Arrows/arrow.png" onclick="prePic()" width="75" height="75" style="position: relative; visibility:hidden; top: -290px; left: -350px" onmouseover = "showArrows()"></img>
-					<img id="RightArrow" src="./Pictures/Arrows/arrowR.png" onclick="nextPic()" width="75" height="75" style="position: relative; visibility:hidden; top: -290px; right: -350px;" onmouseover = "showArrows()"></img>
-				</div>
-				<script>
-					var images = ["Pictures/Mainslides/image1.jpg", "Pictures/Mainslides/image2.jpg","Pictures/Mainslides/image3.jpg", "Pictures/Mainslides/image4.jpg"];
-					//var images = getFiles('./Pictures/Mainslides');
-					var x = -1;
-					/*
-					function getFiles(dir){
-					    var fs = require('fs');
-					    var fileList = [];
-					    
-					    var files = fs.readdirSync(dir);
-					    for(var i in files){
-					        var name = dir+'/'+files[i];
-					        if (!fs.statSync(name).isDirectory()){
-					            fileList.push(name);
-					        }
-					    }
-    					return fileList;
-					}
-					*/
+			
+				
+					<iframe src="https://docs.google.com/forms/d/1VpYkG_PKYuOPP73vDmM_M9DtT80f7xC8ZgMAz0Nji3k/viewform?embedded=true" width="900" height="1600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+				
 					
-					function nextPic() {
+
+							
+
 						
-						image = document.getElementById('mainImage').src;
-
-						x = (x == images.length-1) ? 0 : x+1;
-						document.getElementById('mainImage').src = images[x];
-						
-					}
-					function prePic() {
-						image = document.getElementById('mainImage').src;
-						x = (x == 0) ? images.length-1: x-1;
-						document.getElementById('mainImage').src = images[x];
-					}
-					 function myFunction()
-					{
-						
-						image = document.getElementById('mainImage').src;
-
-						x = (x == images.length-1) ? 0 : x+1;
-						document.getElementById('mainImage').src = images[x];
-						setTimeout("myFunction()",10000);//Changes image every 5 seconds
-					}
-					function showArrows()
-					{
-						document.getElementById('LeftArrow').style.visibility = 'visible';
-						document.getElementById('RightArrow').style.visibility = 'visible';
-					}
-					function hideArrows()
-					{
-						document.getElementById('LeftArrow').style.visibility = 'hidden';
-						document.getElementById('RightArrow').style.visibility = 'hidden';
-					}
-				</script>
-
-				<iframe width="480" height="360" src="https://www.youtube.com/embed/Ni_9uv_n59Y" frameborder="0" allowfullscreen>
-				</iframe>
-				<BR>
-				<BR>
-				
-				
-
-				<h1><a href="contact.html"><u>SUBSCRIBE TO 10X SOCCER PERFORMANCE NOW! </u></a></h1>
-
-				<BR>
-				<BR>
-				<BR>
-				<div class="footer" role="contentinfo">
-        			&copy; Copyright 2015, Principal Designed By Marc Yang.
-    			</div>
+						<div class="footer" role="contentinfo">
+			        		&copy; Copyright 2015, Principal Designed By Marc Yang.
+			    		</div>
 
 
 
 
 
-			<!--design everything within this wrapper class -->
-			<!-- Wrapper class ends-->
-			</div>
-		<!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-
-
-	</body>
-
+				<!--design everything within this wrapper class -->
+				<!-- Wrapper class ends-->
+				</div>
+					<!-- Bootstrap core JavaScript
+			    ================================================== -->
+			    <!-- Placed at the end of the document so the pages load faster -->
+			    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+			    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		</body>
 </html>

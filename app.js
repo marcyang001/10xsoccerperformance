@@ -2,7 +2,7 @@ var express = require('express');
 var fs = require('fs');
 var os = require('os');
 var path = require('path');
-var favicon = require('serve-favicons');
+//var favicon = require('serve-favicons');
 
 var app = express();
 
@@ -11,7 +11,7 @@ function getClientAddress(req) {
 }
 
 //get the favicon.ico of the site 
-app.use(favicon(__dirname + '/Pictures/favicon.ico'));
+//app.use(favicon(__dirname + '/Pictures/favicon.ico'));
 
 app.get('/',function (request, response) {
 	

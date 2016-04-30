@@ -1,7 +1,7 @@
 {
   "name": "10xsoccerperformance",
   "version": "1.0.0",
-  "description": "End to end sample for running Node.JS applications on Google Cloud Platform",
+  "description": "Website for 10X Soccer Performance",
   "repository": "https://github.com/marcyang001/10xsoccerperformance",
   "private": true,
   "scripts": {
@@ -12,7 +12,7 @@
     "mocha": "mocha test/index.js -t 30000",
     "test": "npm run lint && npm run mocha"
   },
-  "author": "10xsoccerperformance",
+  "author": "10X Soccer Performance",
   "contributors": [
     {
       "name": "Marc Yang",
@@ -21,8 +21,7 @@
   ],
   "license": "Apache Version 2.0",
   "dependencies": {
-    "express": "^4.13.4",
-    "serve-favicons": "^2.1.5"
+    "express": "^4.13.4"
   },
   "devDependencies": {
     "jshint": "^2.9.1",

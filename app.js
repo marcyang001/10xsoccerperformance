@@ -16,7 +16,7 @@ function getClientAddress(req) {
 app.get('/',function (request, response) {
 	
 	console.log('request from' + getClientAddress(request) + " " + request.url);
-	response.sendFile( __dirname + '/index.html')
+	response.sendFile( __dirname + '/html/index.html')
 
 	/*
 	console.log('request from' + getClientAddress(request) + " " + request.url);
@@ -60,7 +60,7 @@ app.get('/',function (request, response) {
 /* serves all the static files */
  app.get(/^(.+)$/, function(req, res){ 
      console.log('other files : ' + req.params);
-     res.sendFile( __dirname + req.params[0]); 
+     res.sendFile( __dirname +"/html/"+ req.params[0]); 
  });
 
 
@@ -69,7 +69,7 @@ app.get('/',function (request, response) {
 if (module === require.main) {
   // [START server]
   // Start the server
-  var server = app.listen(process.env.PORT || 8080, function () {
+  	var server = app.listen(process.env.PORT || 8080, function () {
     var host = server.address().address;
     var port = server.address().port;
 

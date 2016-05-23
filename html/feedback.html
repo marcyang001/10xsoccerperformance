@@ -28,7 +28,7 @@
 	</head>
 	
 	
-	<body onload=myFunction()>
+	<body>
 	
 
 			<div class="wrapper">
@@ -84,28 +84,31 @@
 				        </div>
 				        <button onclick="searchResults()" type="submit" class="btn btn-default">Search</button>
 				      </form>
-
-				      		<script>
-								
-								function searchResults() {
-									var r, result; 
-									//var re = /(\w+)\s(\w+)/;
-									//get the value of the input 
-									result = document.getElementById('mySearch').value;
-									//var res = new RegExp('ab+c', 'i');
-									if (result == '' || result == ' ' || result == '  '){
-										//alert('hello')
-									}
-									//open the window in google with the search input
-									else {
-										window.open('http://google.com/search?q='+result);
-									}
-								}
-							</script>
+				      <ul class="nav navbar-nav navbar-right">
+		        			<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+		        			<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		      			</ul>
 				    </div>
 				  </div>
 				
 				</nav>
+					<script>
+								
+						function searchResults() {
+							var r, result; 
+							//var re = /(\w+)\s(\w+)/;
+							//get the value of the input 
+							result = document.getElementById('mySearch').value;
+							//var res = new RegExp('ab+c', 'i');
+							if (result == '' || result == ' ' || result == '  '){
+								//alert('hello')
+							}
+							//open the window in google with the search input
+							else {
+								window.open('http://google.com/search?q='+result);
+							}
+						}
+					</script>
 			
 				
 					<iframe src="https://docs.google.com/forms/d/1VpYkG_PKYuOPP73vDmM_M9DtT80f7xC8ZgMAz0Nji3k/viewform?embedded=true" width="900" height="1600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
@@ -116,7 +119,7 @@
 
 						
 						<div class="footer" role="contentinfo">
-			        		&copy; Copyright 2015, Principal Designed By Marc Yang.
+			        		&copy; Copyright 2016, 10X Soccer Performance.
 			    		</div>
 
 

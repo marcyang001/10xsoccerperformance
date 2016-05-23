@@ -57,13 +57,14 @@ body {
 #mainNavbar div.social-media-icons ul.navright li {
 	display: inline-block;
 	list-style-type: none;
-	margin: 0 0px 0px 10px;
+	margin: 0 0px 0px 20px;
 	-webkit-transition: all 0.2s;
 	-moz-transition: all 0.2s;
 	-ms-transition: all 0.2s;
 	-o-transition: all 0.2s;
 	transition: all 0.2s; 
 	position: relative;
+	top: -15px;
 
 }
 
@@ -73,7 +74,7 @@ body {
 	width: 29px;
 	height: 29px;
 	padding-top: 0 !important; 
-    padding-bottom:0px;
+    padding-bottom: 0px;
     min-height: 10px;
 
 }
@@ -87,14 +88,18 @@ div.col-sm-6 {
 	position: relative;
 	/* adjust the location of images*/ 
 	left: 250px;
-	top: -3px;	
+	top: 12px;	
 }
 
 #logogrid {
 	background-color: black;
-	height: 102px;
+	height: 110px;
 	width: 100%;
+	position: relative;
+
 }
+
+
 /*adjust the title of "10X Soccer Performance" */
 #title { 
 	color: white;
@@ -129,7 +134,7 @@ span.soccer{
 	width: 100px;
 	height: 100px;
 	position: relative;
-	top: -57px;
+	top: -54px;
 	right: 330px;
 
 }
@@ -150,6 +155,12 @@ span.soccer{
 	font-family: 'Open Sans', sans-serif;
 }
 
+.navbar-default .navbar-brand:hover {
+	color: white;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	background-color: black;
+}
 
 .navbar-default .navbar-collapse .nav > li > a {
 	background-color: #4CBCFF;
@@ -157,7 +168,7 @@ span.soccer{
 
 .navbar-default .navbar-collapse .nav > li > a:hover {
 
-	background-color: rgb(170,170, 170);
+	background-color: black;
 }
 
 #map {
@@ -206,6 +217,14 @@ div.footer {
     background-color: #DCDCDC;
 }
 
+#owl-demo .item img{
+	display: block;
+    width: 900px !important;
+	height: 500px !important;
 
+}
 
-
+.owl-controls{
+	position: relative;
+	right: 40px;
+}

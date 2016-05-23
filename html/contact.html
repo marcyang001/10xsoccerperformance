@@ -6,8 +6,8 @@
 		<title>10X Soccer Performance</title>
 
 		<!-- favicon.ico --> 
-		<link rel="icon" type="image/x-icon" href="http://soccerperformance10x.appspot.com//Pictures/favicon.ico" />
-		<link rel="shortcut icon" type="image/x-icon" href="http://soccerperformance10x.appspot.com//Pictures/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="http://soccerperformance10x.appspot.com/Pictures/favicon.ico" />
+		<link rel="shortcut icon" type="image/x-icon" href="http://soccerperformance10x.appspot.com/Pictures/favicon.ico" />
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -76,30 +76,31 @@
 				        </div>
 				        <button onclick="searchResults()" type="submit" class="btn btn-default">Search</button>
 				      </form>
-
-				      		<script>
-								
-								function searchResults() {
-									var r, result; 
-									//var re = /(\w+)\s(\w+)/;
-									//get the value of the input 
-									result = document.getElementById('mySearch').value;
-									//var res = new RegExp('ab+c', 'i');
-									if (result == '' || result == ' ' || result == '  '){
-										//alert('hello')
-									}
-									//open the window in google with the search input
-									else {
-										window.open('http://google.com/search?q='+result);
-									}
-								}
-							</script>
+				      	<ul class="nav navbar-nav navbar-right">
+        					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      					</ul>
 
 				    </div>
 				  </div>
-				
-
 				</nav>
+					<script>
+								
+						function searchResults() {
+							var r, result; 
+							//var re = /(\w+)\s(\w+)/;
+							//get the value of the input 
+							result = document.getElementById('mySearch').value;
+							//var res = new RegExp('ab+c', 'i');
+							if (result == '' || result == ' ' || result == '  '){
+								//alert('hello')
+							}
+							//open the window in google with the search input
+							else {
+								window.open('http://google.com/search?q='+result);
+							}
+						}
+					</script>
 			<header class="entry-header" style="position: relative; left: 30px">
 				<h1> Contact Info</h1>
 			
@@ -219,7 +220,7 @@
 				<BR></BR>
 				<BR></BR>
 				<div class="footer" role="contentinfo">
-        			&copy; Copyright 2015, Principal Designed By Marc Yang
+        			&copy; Copyright 2016, 10X Soccer Performance.
     			</div>
 			</div>
 			</div>
@@ -232,7 +233,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="./dist/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
 

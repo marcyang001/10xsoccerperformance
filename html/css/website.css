@@ -225,6 +225,12 @@ div.footer {
 }
 
 .owl-controls{
-	position: relative;
-	right: 40px;
+    position: relative;
+    right: 150px !important;
+}
+
+.owl-pagination {
+  position: relative;
+  right: 0px !important;
+  
 }

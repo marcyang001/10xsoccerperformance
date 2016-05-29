@@ -21,7 +21,8 @@
   ],
   "license": "Apache Version 2.0",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "body-parser": "^1.9.2"
   },
   "devDependencies": {
     "jshint": "^2.9.1",

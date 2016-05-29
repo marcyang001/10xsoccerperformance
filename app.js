@@ -2,7 +2,11 @@ var express = require('express');
 var fs = require('fs');
 var os = require('os');
 var path = require('path');
-//var favicon = require('serve-favicons');
+var bodyParser = require('body-parser');
+
+// Create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
 
 var app = express();
 
@@ -10,51 +14,39 @@ function getClientAddress(req) {
   return req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 }
 
-//get the favicon.ico of the site 
-//app.use(favicon(__dirname + '/Pictures/favicon.ico'));
 
 app.get('/',function (request, response) {
 	
 	console.log('request from' + getClientAddress(request) + " " + request.url);
 	response.sendFile( __dirname + '/html/index.html')
 
-	/*
-	console.log('request from' + getClientAddress(request) + " " + request.url);
-	var filePath = '.' + request.url;
-	if (filePath == './')
-		filePath = './index.html';
-		
-	var extname = path.extname(filePath);
-	var contentType = 'text/html';
-	switch (extname) {
-		case '.js':
-			contentType = 'text/javascript';
-			break;
-		case '.css':
-			contentType = 'text/css';
-			break;
-	}
-	
-	fs.exists(filePath, function(exists) {
-	
-		if (exists) {
-			fs.readFile(filePath, function(error, content) {
-				if (error) {
-					response.writeHead(500);
-					response.end();
-				}
-				else {
-					response.writeHead(200, { 'Content-Type': contentType });
-					response.end(content, 'utf-8');
-				}
-			});
-		}
-		else {
-			response.writeHead(404);
-			response.end();
-		}
-	});
-	*/
+});
+
+app.post('/process_post', urlencodedParser, function (req, res) {
+
+	console.log(req.url);
+   // Prepare output in JSON format
+   response = {
+       name:req.body.name,
+       email:req.body.email,
+       phone:req.body.phone,
+       update:req.body.update,
+       message:req.body.message
+   };
+   console.log(response);
+   
+
+  	
+   
+   fs.readFile(__dirname + '/html/messageReceived.html', function(err, html){
+
+            if(err){
+                console.log(err);
+            }else{
+                res.write(html);
+                res.end();
+            }
+        });
 });
 
 /* serves all the static files */
@@ -62,6 +54,7 @@ app.get('/',function (request, response) {
      console.log('other files : ' + req.params);
      res.sendFile( __dirname +"/html/"+ req.params[0]); 
  });
+
 
 
 

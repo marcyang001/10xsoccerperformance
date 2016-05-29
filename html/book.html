@@ -6,22 +6,23 @@
 		<title>10X Soccer Performance</title>
 
 		<!-- favicon.ico --> 
-		<link rel="icon" type="image/x-icon" href="http://soccerperformance10x.appspot.com//Pictures/favicon.ico" />
-		<link rel="shortcut icon" type="image/x-icon" href="http://soccerperformance10x.appspot.com//Pictures/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="http://soccerperformance10x.appspot.com/Pictures/favicon.ico" />
+		<link rel="shortcut icon" type="image/x-icon" href="http://soccerperformance10x.appspot.com/Pictures/favicon.ico" />
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
    		
-
+		
 
 		<link href="css/website.css" rel="stylesheet">
+		<link href="css/formstyle.css" rel="stylesheet">
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	</head>
 	
 	
-	<body bgcolor="white">
+	<body>
 			<div class="wrapper">
 					<div class="navbar-header">
 			            <span class="icon-bar"></span>
@@ -80,110 +81,70 @@
         					<li><a class="btn" href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         					<li><a class="btn" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       					</ul>
-				      	
 
 				    </div>
 				  </div>
-			
 				</nav>
 					<script>
 								
 						function searchResults() {
 							var r, result; 
 							//var re = /(\w+)\s(\w+)/;
-								//get the value of the input 
-								result = document.getElementById('mySearch').value;
-								//var res = new RegExp('ab+c', 'i');
-								if (result == '' || result == ' ' || result == '  '){
-									//error handler
-								}
-								//open the window in google with the search input
-								else {
-									window.open('http://google.com/search?q='+result);
-								}
+							//get the value of the input 
+							result = document.getElementById('mySearch').value;
+							//var res = new RegExp('ab+c', 'i');
+							if (result == '' || result == ' ' || result == '  '){
+								//alert('hello')
+							}
+							//open the window in google with the search input
+							else {
+								window.open('http://google.com/search?q='+result);
+							}
 						}
 					</script>
+			<header class="entry-header" style="position: relative; left: 30px">
+				<h1>Book a training session</h1>
+				<p>Packages last for a period of 4 weeks</p>
+			</header>
+			<BR><BR>
 
-
+			<nav >
+				<p>Click on the arrow and choose a package </p>
+				<div >
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="VJZVSVXM2TG28">
+						<table>
+							<tr style="display:none;">
+								<td><input type="hidden" name="on0" value="Packages (during a period of 4 weeks)">Packages (during a period of 4 weeks)
+								</td>
+							</tr>
+							<tr>
+								<td style="position: relative; left: 286px;">
+									<select name="os0">
+										<option value="1 training session:">1 training session: $25.00 CAD</option>
+										<option value="3 training sessions:">3 training sessions: $75.00 CAD</option>
+										<option value="4 training sessions:">4 training sessions: $95.00 CAD</option>
+										<option value="Performance (8 training sessions):">Performance (8 training sessions): $180.00 CAD</option>
+										<option value="Excel (12 training sessions):">Excel (12 training sessions): $265.00 CAD</option>
+										<option value="Peak (20 training sessions):">Peak (20 training sessions): $450.00 CAD</option>
+										<option value="10X (28 training sessions):">10X (28 training sessions): $550.00 CAD</option>
+									</select> 
+								</td>
+							</tr>
+						</table>
+						<input type="hidden" name="currency_code" value="CAD">
+						<br>
+						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+						<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+					</form>
+				</div>
+			</nav>
+					
+			<BR><BR>
+		    
 				
-            		
-            	<iframe src="https://calendar.google.com/calendar/embed?src=hsmrd5o4lbmkj9cg20p9dncajo%40group.calendar.google.com&ctz=America/Toronto" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-            		
-            	<BR></BR>				
-            	<BR></BR>				
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="announce" name="announce">
-					
-					<div style="position: relative; left: -130px">
-					<b>Main Locations</b>: 
-						<ul style="position: relative; left: 100px">
-	  						Parc d'Auteuil <BR>
-	  						Parc Henri-Julien <BR>
-	  						Parc Saint-Benoît
-						</ul>
-						<BR>
-					<b>Regular timeslot for reservations: </b> 
-						<ul style="position: relative; left: 100px">
-	  						<u>Mon - Fri</u>: 4pm - 6pm<BR>
-	  						<u>Sat - Sun</u>: 8am - 10am, 4pm - 6pm <BR>
-						</ul>
-					</div>
 
-					<BR>
-					<BR>
-
-		    		<!-- Google Map -->
-					<div id="map" style="position: relative; left: 180px"></div>
-	  				<script>
-	  					function initMap() {
-				  			//obtain the div name id map
-				  			var mapDiv = document.getElementById('map');
-				  			//identify the location for Parc d'Auteuil
-				  			var parcdAuteuil = {lat: 45.5486598, lng: -73.656954};
-				  			// identify the location for Parc Julien
-				  			var parcHenryJulien = {lat: 45.547294, lng: -73.650117};	
-				  			
-				  			var parcSaintBenoit = {lat: 45.541033, lng: -73.665384}
-
-				  			//45.541033, -73.665384
-				  			//create a new Google Maps object
-				  			var map = new google.maps.Map(mapDiv, {
-				      			center: {lat: 45.5486598, lng: -73.656954},
-				      			zoom: 14
-				    		});
-				    		//center is a Google Maps
-				    		//LatLngLiteral object that tells the the API where to center the map.
-				    		//zoom is a number between 0 (farthest) and 22 that sets the zoom level of the map.
-				    		var marker1 = new google.maps.Marker({
-	    						position: parcdAuteuil,
-	    						map: map,
-	    						title: 'Parc dAuteil'
-	  						});
-	  						var marker2 = new google.maps.Marker({
-	    						position: parcHenryJulien,
-	    						map: map,
-	    						title: 'Parc Julien'
-	  						});
-	  						var marker2 = new google.maps.Marker({
-	    						position: parcSaintBenoit,
-	    						map: map,
-	    						title: 'Parc Saint Benoit'
-	  						});
-	  					}
-					</script>
-	  				<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
-	        			async defer></script>
-
-
-					<!--Insert the table   -->
-					<BR></BR>				
-					
-
-					<!--foot note -->
-					<div class="footer" role="contentinfo">
-	        			&copy; Copyright 2016, 10X Soccer Performance.
-	    			</div>
-
-    			</div> <!-- container -->
 
 		<!-- Wrapper class ends-->
 			</div>

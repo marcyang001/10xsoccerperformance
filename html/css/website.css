@@ -171,6 +171,17 @@ span.soccer{
 	background-color: black;
 }
 
+.navbar-left {
+    position: absolute;
+    right: 174px;
+}
+
+.navbar-right {
+    position: absolute;
+    right: 15px;
+}
+
+
 #map {
         width: 500px;
         height: 400px;

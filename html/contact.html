@@ -33,17 +33,17 @@
 					<nav id="mainNavbar">
 						<div class="social-media-icons">
 						<ul class="navright">
-							<li><a href="https://www.facebook.com/10XSoccerPerformance" target="_blank"><img src="./Pictures/social-media-icons/facebook.png" alt="Facebook" border="0"/></a></li>
-							<li><a href="https://twitter.com/10XSoccer" target="_blank"><img src="./Pictures/social-media-icons/twitter.png" alt="Twitter" border="0"/></a></li>
-							<li><a href="https://www.youtube.com/user/BakanD" target="_blank"><img src="./Pictures/social-media-icons/youtube.png" alt="Youtube" border="0"/></a></li>
-							<li><a href="https://instagram.com/"><img src="./Pictures/social-media-icons/instagram.png" alt="Youtube" border="0"/></a></li>
+							<li><a href="https://www.facebook.com/10XSoccerPerformance" target="_blank"><img src="./Pictures/social-media-icons/facebook.png" alt="Facebook" style="border: 0;"/></a></li>
+							<li><a href="https://twitter.com/10XSoccer" target="_blank"><img src="./Pictures/social-media-icons/twitter.png" alt="Twitter" style="border: 0;"/></a></li>
+							<li><a href="https://www.youtube.com/user/BakanD" target="_blank"><img src="./Pictures/social-media-icons/youtube.png" alt="Youtube" style="border: 0;"/></a></li>
+							<li><a href="https://instagram.com/"><img src="./Pictures/social-media-icons/instagram.png" alt="Instagram" style="border: 0;"/></a></li>
 						</ul>
 						</div>
 					</nav>
 
 				<div id="logogrid">
 					<div id="title"><span class="10X">10X</span> <span class="soccer"> SOCCER PERFORMANCE</span></div>
-					<a href="http://www.10xsoccerperformance.com"><img id="logopic" src="./Pictures/mainlogo.png"/>
+					<a href="http://www.10xsoccerperformance.com"><img id="logopic" src="./Pictures/mainlogo.png" alt="Player heading the ball logo"/></a>
 				</div>
 
 
@@ -62,13 +62,14 @@
 				      <a class="navbar-brand" href="index.html">10X Soccer</a>
 				    </div>
 
-				    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+				    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" role="navigation" aria-expanded="false" style="height: 1px;">
 				      <ul class="nav navbar-nav">
 				      	<li ><a class="btn" href="about.html">About</a></li>
 				        <li><a class="btn" href="schedule.html">Schedule</a></li>
 				        <li>
 				          <a class="btn" href="contact.html">Contact</a>
 				        </li>
+				        <li><a class="btn" href="book.html">Book now</a></li>
 				      </ul>
 				      <form class="navbar-form navbar-left" role="search">
 				        <div class="form-group">
@@ -77,8 +78,8 @@
 				        <button onclick="searchResults()" type="submit" class="btn btn-default">Search</button>
 				      </form>
 				      	<ul class="nav navbar-nav navbar-right">
-        					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        					<li><a class="btn" href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        					<li><a class="btn" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       					</ul>
 
 				    </div>
@@ -111,27 +112,27 @@
 				Email: 10xsoccerperformance@gmail.com
 				</p>
 			</header>
-			<BR></BR>
+			<BR><BR>
 			<nav id="subscribelogos">
 				<div class="socialLogos">
 					<ul class="navright">
-						<li><a href="https://www.facebook.com/10XSoccerPerformance" target="_blank"><img src="./Pictures/social-media-icons/facebook.png" alt="Facebook" border="0"/></a></li>
-						<li><a href="https://twitter.com/10XSoccer" target="_blank"><img src="./Pictures/social-media-icons/twitter.png" alt="Twitter" border="0"/></a></li>
-						<li><a href="https://www.youtube.com/user/BakanD" target="_blank"><img src="./Pictures/social-media-icons/youtube.png" alt="Youtube" border="0"/></a></li>
-						<li><a href="https://instagram.com/"><img src="./Pictures/social-media-icons/instagram.png" alt="Youtube" border="0"/></a></li>
+						<li><a href="https://www.facebook.com/10XSoccerPerformance" target="_blank"><img src="./Pictures/social-media-icons/facebook.png" alt="Facebook" style="border: 0;"/></a></li>
+						<li><a href="https://twitter.com/10XSoccer" target="_blank"><img src="./Pictures/social-media-icons/twitter.png" alt="Twitter" style="border: 0;"/></a></li>
+						<li><a href="https://www.youtube.com/user/BakanD" target="_blank"><img src="./Pictures/social-media-icons/youtube.png" alt="Youtube" style="border: 0;"/></a></li>
+						<li><a href="https://instagram.com/"><img src="./Pictures/social-media-icons/instagram.png" alt="Instagram" style="border: 0;"/></a></li>
 						</ul>
 				</div>
 			</nav>
 					<p style="position: relative; left: 30px">-------------------------------------------------------------------</p>
 					
-			<BR></BR>
-			<BR></BR>
+			<BR><BR>
+			<BR><BR>
 
 			<header style="position: relative; left: 30px" class="entry-header">
 				<h1> Contact Us</h1>
-				<p> <h4>Leave us your information and we will contact you back within one day. </h4></p>
+				<h4>Leave us your information and we will contact you back within one day.</h4>
 			</header>
-			<BR></BR>
+			<BR><BR>
 		    
 			<!--Contact form -->
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -161,22 +162,20 @@
 
 					<div class="form-horizontal">
 						<div class="form-group">
-							<label for="name" class="col-sm-3 control-label">Your Email<span class="text-danger">*</span></label>
+							<label for="email" class="col-sm-3 control-label">Your Email <span class="text-danger">*</span></label>
 							<div class="col-sm-9">
-						
-								<span class="wpcf7-form-control-wrap name">
-								<input type="text" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" id="name" aria-required="true" aria-invalid="false"/>
-								</span>
+							
+								<span class="wpcf7-form-control-wrap email"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control" id="email" aria-required="true" aria-invalid="false"/></span>
 							</div>
 						</div>
 					</div>
 
 					<div class="form-horizontal">
 						<div class="form-group">
-							<label for="email" class="col-sm-3 control-label">Phone Number <span class="text-danger">*</span></label>
+							<label for="phone" class="col-sm-3 control-label">Phone Number <span class="text-danger">*</span></label>
 							<div class="col-sm-9">
 							
-								<span class="wpcf7-form-control-wrap email"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control" id="email" aria-required="true" aria-invalid="false"/></span>
+								<span class="wpcf7-form-control-wrap phone"><input type="text" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-phone wpcf7-validates-as-required wpcf7-validates-as-phone form-control" id="phone" aria-required="true" aria-invalid="false"/></span>
 							</div>
 						</div>
 					</div>
@@ -216,14 +215,14 @@
 			</div>
 			<!--Contact form ends -->
 			
-				<BR></BR>
-				<BR></BR>
-				<BR></BR>
+				<BR><BR>
+				<BR><BR>
+				<BR><BR>
 				<div class="footer" role="contentinfo">
         			&copy; Copyright 2016, 10X Soccer Performance.
     			</div>
 			</div>
-			</div>
+			
 				
 
 

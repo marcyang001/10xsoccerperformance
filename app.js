@@ -33,13 +33,15 @@ app.post('/process_post', urlencodedParser, function (req, res) {
        update:req.body.update,
        message:req.body.message
    };
-   console.log(response);
-   
 
-  	
    
-   fs.readFile(__dirname + '/html/messageReceived.html', function(err, html){
+   	
 
+   	validphone = validPhone();
+	validemail = validateEmail();
+
+    if (response.name == '' && (!validphone || !validemail)) {
+   		fs.readFile(__dirname + '/html/messageFailed.html', function(err, html){
             if(err){
                 console.log(err);
             }else{
@@ -47,6 +49,46 @@ app.post('/process_post', urlencodedParser, function (req, res) {
                 res.end();
             }
         });
+
+   	}else {
+   		fs.readFile(__dirname + '/html/messageReceived.html', function(err, html){
+            if(err){
+                console.log(err);
+            }else{
+                
+            	//send the message through MailGun
+                res.write(html);
+                res.end();
+            }
+        });
+
+   	}
+  	
+
+  	function validateEmail() {
+  		var a = true;
+  		if (response["email"] == '') {
+  			a = false;
+  		}
+  		else if (response["email"].toString().indexOf("@") < 0) {
+  			a = false;
+  		}
+  		
+  		return a;
+  	}
+
+  	function validPhone() {
+  		var a = true;
+  		exp = /\d/;
+  		if (!exp.test(response["phone"].toString())){
+  			a = false;
+  		}
+  		
+  		return a
+
+  	}
+   
+   
 });
 
 /* serves all the static files */

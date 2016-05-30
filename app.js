@@ -5,7 +5,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 
 // [START setup]
-var api_key = 'key-dd61880d10fe2238e4f11c024671f57e';
+var api_key = 'key-4ad1de3b4cc58f18725c7ae4719cd0fe';
 var Mailgun = require('mailgun').Mailgun;
 var mg = new Mailgun(api_key);
 
@@ -61,7 +61,7 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
    						'update: ' + response['update'] + '\n' + 
    						'message: \n' + response['message'] + '\n';
    		
- 			mg.sendText('10X<postmaster@sandbox89d24255fa0e44ba8d22681c98ff8234.mailgun.org>', ['10X Soccer Performance <10xsoccerperformance@gmail.com>'],
+ 			mg.sendText('10X<postmaster@sandbox89d24255fa0e44ba8d22681c98ff8234.mailgun.org>', ['Marc Yang <10xsoccerperformance@gmail.com>'],
   						title,
   						message,
   						'm.y.yang001@gmail.com', {},

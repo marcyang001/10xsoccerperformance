@@ -2,7 +2,7 @@ runtime: nodejs
 vm: true
 api_version: 1
 env_variables:
-  MAILGUN_API_KEY: key-dd61880d10fe2238e4f11c024671f57e
+  MAILGUN_API_KEY: key-4ad1de3b4cc58f18725c7ae4719cd0fe
 
 skip_files:
   - ^(.*/)?.*/node_modules/.*$

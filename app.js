@@ -61,7 +61,7 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
    						'update: ' + response['update'] + '\n' + 
    						'message: \n' + response['message'] + '\n';
    		
- 			mg.sendText('10X<postmaster@sandbox89d24255fa0e44ba8d22681c98ff8234.mailgun.org>', ['10X Soccer Performance <m.y.yang001@gmail.com>'],
+ 			mg.sendText('10X<postmaster@sandbox89d24255fa0e44ba8d22681c98ff8234.mailgun.org>', ['10X Soccer Performance <10xsoccerperformance@gmail.com>'],
   						title,
   						message,
   						'm.y.yang001@gmail.com', {},

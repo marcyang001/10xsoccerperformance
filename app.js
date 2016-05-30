@@ -55,17 +55,28 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
             }
         });
 
-   	}else {
-   		//fs.readFile(__dirname + '/html/messageReceived.html', function(err, html){
- 			mg.sendText('ca_yangy@yahoo.ca', ['Recipient 1 <m.y.yang001@gmail.com>'],
-  						'This is the subject',
-  						'This is the text',
-  						'noreply@example.com', {},
+   	}else {	
+   			title = 'Message from sender: ' + response['name'];
+   			message = 'email: ' + response['email'] + '\n' +
+   						'phone: '+ response['phone'] + '\n' + 
+   						'update: ' + response['update'] + '\n' + 
+   						'message: \n' + response['message'] + '\n';
+   		
+ 			mg.sendText('10X<postmaster@sandbox89d24255fa0e44ba8d22681c98ff8234.mailgun.org>', ['10X Soccer Performance <m.y.yang001@gmail.com>'],
+  						title,
+  						message,
+  						'm.y.yang001@gmail.com', {},
 						  function(err) {
 						    if (err) console.log('Oh noes: ' + err);
-						    else     console.log('Success');
+						    else {
+						    	fs.readFile(__dirname + '/html/messageReceived.html', function(err, html){
+
+						    		res.write(html);
+                					res.end();
+						    	});
+						    }
 						});
-        //});
+        
 
    	}
 

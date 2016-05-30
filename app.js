@@ -6,7 +6,6 @@ var bodyParser = require('body-parser');
 
 // [START setup]
 var api_key = 'key-dd61880d10fe2238e4f11c024671f57e';
-//var mailgun = require('mailgun-js')({apiKey: api_key});
 var Mailgun = require('mailgun').Mailgun;
 var mg = new Mailgun(api_key);
 

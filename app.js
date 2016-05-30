@@ -61,10 +61,10 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
    						'update: ' + response['update'] + '\n' + 
    						'message: \n' + response['message'] + '\n';
    		
- 			mg.sendText('10X<postmaster@sandbox89d24255fa0e44ba8d22681c98ff8234.mailgun.org>', ['Marc Yang <10xsoccerperformance@gmail.com>'],
+ 			mg.sendText('10X<postmaster@sandbox89d24255fa0e44ba8d22681c98ff8234.mailgun.org>', ['10X Soccer Performance <10xsoccerperformance@gmail.com>'],
   						title,
   						message,
-  						'm.y.yang001@gmail.com', {},
+  						'10xsoccerperformance@gmail.com', {},
 						  function(err) {
 						    if (err) console.log('Oh noes: ' + err);
 						    else {

@@ -4,6 +4,14 @@ var os = require('os');
 var path = require('path');
 var bodyParser = require('body-parser');
 
+// [START setup]
+var api_key = 'key-dd61880d10fe2238e4f11c024671f57e';
+//var mailgun = require('mailgun-js')({apiKey: api_key});
+var Mailgun = require('mailgun').Mailgun;
+var mg = new Mailgun(api_key);
+
+// [END setup]
+
 // Create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
@@ -22,20 +30,17 @@ app.get('/',function (request, response) {
 
 });
 
-app.post('/process_post', urlencodedParser, function (req, res) {
+app.post('/process_post', urlencodedParser, function (req, res, next) {
 
 	console.log(req.url);
-   // Prepare output in JSON format
-   response = {
+   	// Prepare output in JSON format
+   	response = {
        name:req.body.name,
        email:req.body.email,
        phone:req.body.phone,
        update:req.body.update,
        message:req.body.message
-   };
-
-   
-   	
+   	};
 
    	validphone = validPhone();
 	validemail = validateEmail();
@@ -51,18 +56,19 @@ app.post('/process_post', urlencodedParser, function (req, res) {
         });
 
    	}else {
-   		fs.readFile(__dirname + '/html/messageReceived.html', function(err, html){
-            if(err){
-                console.log(err);
-            }else{
-                
-            	//send the message through MailGun
-                res.write(html);
-                res.end();
-            }
-        });
+   		//fs.readFile(__dirname + '/html/messageReceived.html', function(err, html){
+ 			mg.sendText('ca_yangy@yahoo.ca', ['Recipient 1 <m.y.yang001@gmail.com>'],
+  						'This is the subject',
+  						'This is the text',
+  						'noreply@example.com', {},
+						  function(err) {
+						    if (err) console.log('Oh noes: ' + err);
+						    else     console.log('Success');
+						});
+        //});
 
    	}
+
   	
 
   	function validateEmail() {
@@ -109,6 +115,7 @@ if (module === require.main) {
     var port = server.address().port;
 
     console.log('App listening at http://%s:%s', host, port);
+    console.log('Press Ctrl+C to quit.');
 
   });
   // [END server]

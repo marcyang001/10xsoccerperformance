@@ -1,35 +1,35 @@
 {
-  "name": "OpenShift-Sample-App",
+  "name": "10xsoccerperformance",
   "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "description": "Website for 10X Soccer Performance",
+  "repository": "https://github.com/marcyang001/10xsoccerperformance",
+  "private": true,
+  "main": "server.js",
   "keywords": [
     "OpenShift",
     "Node.js",
     "application",
     "openshift"
   ],
-  "author": {
-    "name": "OpenShift",
-    "email": "ramr@example.org",
-    "url": "http://www.openshift.com/"
+  "scripts": {
+    "start": "node server.js",
+    "monitor": "nodemon app.js"
   },
-  "homepage": "http://www.openshift.com/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/openshift/origin-server"
+  "author": "10X Soccer Performance",
+  "contributors": [
+    {
+      "name": "Marc Yang",
+      "email": "m.y.yang001@gmail.com"
+    }
+  ],
+  "license": "Apache Version 2.0",
+  "dependencies": {
+    "express": "^4.13.4",
+    "body-parser": "^1.9.2",
+    "mailgun": "^0.5.0"
   },
-
   "engines": {
     "node": ">= 0.6.0",
     "npm": ">= 1.0.0"
-  },
-
-  "dependencies": {
-    "express": "~3.4.4"
-  },
-  "devDependencies": {},
-  "bundleDependencies": [],
-
-  "private": true,
-  "main": "server.js"
+  }
 }

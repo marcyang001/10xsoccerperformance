@@ -5,13 +5,13 @@
   "repository": "https://github.com/marcyang001/10xsoccerperformance",
   "private": true,
   "scripts": {
-    "start": "node app.js",
+    "start": "node server.js",
     "monitor": "nodemon app.js",
-    "deploy": "gcloud preview app deploy app.yaml",
     "lint": "jshint --exclude-path=../.gitignore .",
     "mocha": "mocha test/index.js -t 30000",
     "test": "npm run lint && npm run mocha"
   },
+  "main": "server.js",
   "author": "10X Soccer Performance",
   "contributors": [
     {

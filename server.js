@@ -79,9 +79,9 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
                       if (err) console.log('Oh noes: ' + err);
                       else {
                         fs.readFile(__dirname + '/html/messageReceived.html', function(err, html){
-
+                          res.writeHead(200, {'Content-Type': 'text/html','Content-Length':html.length});
                           res.write(html);
-                                res.end();
+                          res.end();
                         });
                       }
                   });
@@ -95,6 +95,7 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
                   if(err){
                       console.log(err);
                   }else{
+                      res.writeHead(200, {'Content-Type': 'text/html','Content-Length':html.length});
                       res.write(html);
                       res.end();
                   }

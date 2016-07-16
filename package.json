@@ -7,9 +7,8 @@
   "scripts": {
     "start": "node server.js",
     "monitor": "nodemon app.js",
-    "lint": "jshint --exclude-path=../.gitignore .",
     "mocha": "mocha test/index.js -t 30000",
-    "test": "npm run lint && npm run mocha"
+    "test": "npm run mocha"
   },
   "main": "server.js",
   "author": "10X Soccer Performance",

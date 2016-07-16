@@ -172,8 +172,9 @@ span.soccer{
 }
 
 .navbar-left {
-    position: absolute;
-    right: 174px;
+	position: absolute;
+	right: 176px;
+	height: 44px;
 }
 
 .navbar-right {

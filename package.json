@@ -6,9 +6,7 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "monitor": "nodemon app.js",
-    "mocha": "mocha test/index.js -t 30000",
-    "test": "npm run mocha"
+    "monitor": "nodemon app.js"
   },
   "main": "server.js",
   "author": "10X Soccer Performance",
@@ -23,10 +21,6 @@
     "express": "^4.13.4",
     "body-parser": "^1.9.2",
     "mailgun": "^0.5.0"
-  },
-  "devDependencies": {
-    "mocha": "^2.4.5",
-    "supertest": "^1.2.0"
   },
   "engines": {
     "node": ">=0.12.7"

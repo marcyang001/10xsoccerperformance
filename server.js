@@ -16,6 +16,10 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 var app = express();
 
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3002);
+app.set('ip', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
+
+
 function getClientAddress(req) {
   return req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 }
@@ -160,9 +164,7 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
 if (module === require.main) {
   // [START server]
   // Start the server
-    var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
-    var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
-  	var server = app.listen(server_port, server_ip_address, function () {
+  	var server = app.listen(app.get('port') ,app.get('ip'), function () {
     var host = server.address().address;
     var port = server.address().port;
 

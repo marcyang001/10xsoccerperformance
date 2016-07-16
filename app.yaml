@@ -3,7 +3,6 @@ vm: true
 api_version: 1
 env_variables:
   MAILGUN_API_KEY: key-4ad1de3b4cc58f18725c7ae4719cd0fe
-  OPENSHIFT_NODEJS_PORT: 8000
 
 
 skip_files:

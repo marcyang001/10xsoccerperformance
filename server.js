@@ -45,6 +45,9 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
     };
 
     verifyRecaptcha(response.recaptcha, function(success) {
+        
+
+
         if (success) {
           // TODO: do registration using params in req.body
             // Prepare output in JSON format
@@ -52,12 +55,14 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
 
           validphone = validPhone();
           validemail = validateEmail();
-
-          if (response.name == '' || ! validemail || (!validphone)) {
+          console.log("enter here!!!!");
+          if (response.name == '' || (!validemail) || (!validphone)) {
             fs.readFile(__dirname + '/html/messageFailed.html', function(err, html){
+                  console.log("enter error page!!!!");
                   if(err){
                       console.log(err);
                   }else{
+                      res.writeHead(200, {'Content-Type': 'text/html','Content-Length':html.length});
                       res.write(html);
                       res.end();
                   }
@@ -89,17 +94,17 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
 
           }
 
-
+          //if re-captcha fails
         } else {
           fs.readFile(__dirname + '/html/messageFailed.html', function(err, html){
-                  if(err){
-                      console.log(err);
-                  }else{
-                      res.writeHead(200, {'Content-Type': 'text/html','Content-Length':html.length});
-                      res.write(html);
-                      res.end();
-                  }
-              });
+              if(err){
+                console.log(err);
+              }else{
+                  res.writeHead(200, {'Content-Type': 'text/html','Content-Length':html.length});
+                  res.write(html);
+                  res.end();
+              }
+          });
         }
     });
 	 

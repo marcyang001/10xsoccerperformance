@@ -16,7 +16,7 @@
 .owl-carousel{
 	display: none;
 	position: relative;
-	width: 900px;
+	width: 100%;
 	-ms-touch-action: pan-y;
 }
 .owl-carousel .owl-wrapper{
@@ -69,3 +69,10 @@
   -ms-transform: translate3d(0,0,0);
 }
 
+.form-group {
+	width:170px;
+}
+
+.container {
+	width:100%;	
+}

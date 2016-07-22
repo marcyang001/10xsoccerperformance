@@ -1,0 +1,48 @@
+
+body, ul, li, a, div {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", 
+    "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 300;
+	font-size: 15px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+#mainNavbar {
+    color: white;
+    width: 900px;
+    height: 50px;
+    background-color: #4CBCFF;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+#mainNavbar:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.nav-left {
+    float: left;
+}
+.nav-right {
+    float: right;
+}
+.nav-left:hover {
+    background-color: #222
+}
+#mainNavbar a {
+    color: white;
+    padding: 15px;
+    line-height: 50px;
+}
+.form {
+    padding: 0 ;
+}
+.form input {
+    margin-right: -33px;
+}

@@ -1,9 +1,6 @@
 .DS_Store
 html/.DS_Store
-<<<<<<< HEAD
-=======
 node_modules/*
 .openshift/*
 ../deploy/*
 ../*
->>>>>>> 9244636f8fee7ac0c9cd16fce537e4b88c78f322

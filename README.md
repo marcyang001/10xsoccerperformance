@@ -23,8 +23,14 @@ Running The app on your local machine
 
     http://localhost:8080
 
+<<<<<<< HEAD
 Running the app on Google App Engine
 
 To deploy the app, enter this command:
 
 	$ gcloud preview app deploy
+=======
+Running the app on Openshift
+
+Install Ruby and rhc in order to deploy 
+>>>>>>> a1ebcc9e95a2ec04f6f988510340e33072ee2e2f

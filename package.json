@@ -4,11 +4,24 @@
   "description": "Website for 10X Soccer Performance",
   "repository": "https://github.com/marcyang001/10xsoccerperformance",
   "private": true,
+<<<<<<< HEAD
+=======
+  "main": "server.js",
+  "keywords": [
+    "OpenShift",
+    "Node.js",
+    "application",
+    "openshift"
+  ],
+>>>>>>> a1ebcc9e95a2ec04f6f988510340e33072ee2e2f
   "scripts": {
     "start": "node server.js",
     "monitor": "nodemon app.js"
   },
+<<<<<<< HEAD
   "main": "server.js",
+=======
+>>>>>>> a1ebcc9e95a2ec04f6f988510340e33072ee2e2f
   "author": "10X Soccer Performance",
   "contributors": [
     {
@@ -21,5 +34,12 @@
     "express": "^4.13.4",
     "body-parser": "^1.9.2",
     "mailgun": "^0.5.0"
+<<<<<<< HEAD
+=======
+  },
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+>>>>>>> a1ebcc9e95a2ec04f6f988510340e33072ee2e2f
   }
 }

@@ -10,14 +10,23 @@ var mg = new Mailgun(api_key);
 
 // [END setup]
 
+<<<<<<< HEAD
+=======
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+
+>>>>>>> a1ebcc9e95a2ec04f6f988510340e33072ee2e2f
 // Create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
 var app = express();
 
+<<<<<<< HEAD
 app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3002);
 app.set('ip', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
+=======
+>>>>>>> a1ebcc9e95a2ec04f6f988510340e33072ee2e2f
 
 
 function getClientAddress(req) {
@@ -44,6 +53,12 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
     };
 
     verifyRecaptcha(response.recaptcha, function(success) {
+<<<<<<< HEAD
+=======
+        
+
+
+>>>>>>> a1ebcc9e95a2ec04f6f988510340e33072ee2e2f
         if (success) {
           // TODO: do registration using params in req.body
             // Prepare output in JSON format
@@ -51,12 +66,23 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
 
           validphone = validPhone();
           validemail = validateEmail();
+<<<<<<< HEAD
 
           if (response.name == '' || ! validemail || (!validphone)) {
             fs.readFile(__dirname + '/html/messageFailed.html', function(err, html){
                   if(err){
                       console.log(err);
                   }else{
+=======
+          console.log("enter here!!!!");
+          if (response.name == '' || (!validemail) || (!validphone)) {
+            fs.readFile(__dirname + '/html/messageFailed.html', function(err, html){
+                  console.log("enter error page!!!!");
+                  if(err){
+                      console.log(err);
+                  }else{
+                      res.writeHead(200, {'Content-Type': 'text/html','Content-Length':html.length});
+>>>>>>> a1ebcc9e95a2ec04f6f988510340e33072ee2e2f
                       res.write(html);
                       res.end();
                   }
@@ -78,9 +104,15 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
                       if (err) console.log('Oh noes: ' + err);
                       else {
                         fs.readFile(__dirname + '/html/messageReceived.html', function(err, html){
+<<<<<<< HEAD
 
                           res.write(html);
                                 res.end();
+=======
+                          res.writeHead(200, {'Content-Type': 'text/html','Content-Length':html.length});
+                          res.write(html);
+                          res.end();
+>>>>>>> a1ebcc9e95a2ec04f6f988510340e33072ee2e2f
                         });
                       }
                   });
@@ -88,6 +120,7 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
 
           }
 
+<<<<<<< HEAD
 
         } else {
           fs.readFile(__dirname + '/html/messageFailed.html', function(err, html){
@@ -98,6 +131,19 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
                       res.end();
                   }
               });
+=======
+          //if re-captcha fails
+        } else {
+          fs.readFile(__dirname + '/html/messageFailed.html', function(err, html){
+              if(err){
+                console.log(err);
+              }else{
+                  res.writeHead(200, {'Content-Type': 'text/html','Content-Length':html.length});
+                  res.write(html);
+                  res.end();
+              }
+          });
+>>>>>>> a1ebcc9e95a2ec04f6f988510340e33072ee2e2f
         }
     });
 	 
@@ -164,7 +210,11 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
 if (module === require.main) {
   // [START server]
   // Start the server
+<<<<<<< HEAD
   	var server = app.listen(app.get('port') ,app.get('ip'), function () {
+=======
+  	var server = app.listen(server_port, server_ip_address, function () {
+>>>>>>> a1ebcc9e95a2ec04f6f988510340e33072ee2e2f
     var host = server.address().address;
     var port = server.address().port;
 

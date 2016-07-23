@@ -140,13 +140,13 @@ span.soccer{
 }
 
 /*tabs */
-.navbar-default {
+/*.navbar-default {
 	
 	background-color: #4CBCFF;
 }
 
 .navbar-default .navbar-collapse .nav > li > a{
-	color: white;  /*Sets the text hover color on navbar*/
+	color: white;  /*Sets the text hover color on navbar
 }
 
 .navbar-default .navbar-brand {
@@ -180,8 +180,51 @@ span.soccer{
 .navbar-right {
     position: absolute;
     right: 15px;
-}
+}*/
 
+a:hover {
+    text-decoration: none;
+}
+ul, li, a{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+#mainNavbar {
+    color: white;
+    width: 900px;
+    height: 50px;
+    background-color: #4CBCFF;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+#mainNavbar:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.nav-left {
+    float: left;
+}
+.nav-right {
+    float: right;
+}
+.nav-left:hover {
+    background-color: #222
+}
+#mainNavbar a {
+    color: white;
+    padding: 15px;
+    line-height: 50px;
+}
+.form {
+    padding: 0 ;
+}
+.form input {
+    margin-right: -33px;
+}
 
 #map {
         width: 500px;

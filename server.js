@@ -35,15 +35,26 @@ app.get('/',function (request, response) {
 
 app.post('/process_post', urlencodedParser, function (req, res, next) {
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9244636f8fee7ac0c9cd16fce537e4b88c78f322
     response = {
        name:req.body.name,
        email:req.body.email,
        phone:req.body.phone,
        update:req.body.update,
        message:req.body.message,
+<<<<<<< HEAD
        recaptcha: req.body["g-recaptcha-response"]
     };
 
+=======
+       recaptcha: req.body.recaptcha
+    };
+
+
+>>>>>>> 9244636f8fee7ac0c9cd16fce537e4b88c78f322
     verifyRecaptcha(response.recaptcha, function(success) {
         
 
@@ -55,6 +66,7 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
 
           validphone = validPhone();
           validemail = validateEmail();
+<<<<<<< HEAD
           console.log("enter here!!!!");
           if (response.name == '' || (!validemail) || (!validphone)) {
             fs.readFile(__dirname + '/html/messageFailed.html', function(err, html){
@@ -67,6 +79,20 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
                       res.end();
                   }
               });
+=======
+
+          if (response.name == '' || (!validemail) || (!validphone)) {
+            
+              console.log("enter error page!!!!");
+              if(err){
+                console.log(err);
+              }else{
+                    
+                  data = {"message":"error"};
+                  res.send(data);
+              }
+              
+>>>>>>> 9244636f8fee7ac0c9cd16fce537e4b88c78f322
 
           }else { 
               title = 'Message from sender: ' + response['name'];
@@ -74,7 +100,12 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
                     'phone: '+ response['phone'] + '\n' + 
                     'update: ' + response['update'] + '\n' + 
                     'message: \n' + response['message'] + '\n';
+<<<<<<< HEAD
             
+=======
+              
+            console.log("enter here success")
+>>>>>>> 9244636f8fee7ac0c9cd16fce537e4b88c78f322
             
             mg.sendText('10X<postmaster@sandbox89d24255fa0e44ba8d22681c98ff8234.mailgun.org>', ['10X Soccer Performance <10xsoccerperformance@gmail.com>'],
                     title,
@@ -83,6 +114,7 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
                     function(err) {
                       if (err) console.log('Oh noes: ' + err);
                       else {
+<<<<<<< HEAD
                         fs.readFile(__dirname + '/html/messageReceived.html', function(err, html){
                           res.writeHead(200, {'Content-Type': 'text/html','Content-Length':html.length});
                           res.write(html);
@@ -92,10 +124,18 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
                   });
               
 
+=======
+                          data = {"message":"success"};
+                          res.send(data);
+                      }
+                  });
+      
+>>>>>>> 9244636f8fee7ac0c9cd16fce537e4b88c78f322
           }
 
           //if re-captcha fails
         } else {
+<<<<<<< HEAD
           fs.readFile(__dirname + '/html/messageFailed.html', function(err, html){
               if(err){
                 console.log(err);
@@ -105,6 +145,11 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
                   res.end();
               }
           });
+=======
+         
+            data = {"message":"error"};
+            res.send(data);
+>>>>>>> 9244636f8fee7ac0c9cd16fce537e4b88c78f322
         }
     });
 	 

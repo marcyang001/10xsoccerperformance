@@ -6,8 +6,7 @@
 		<title>10X Soccer Performance</title>
 
 		<!-- favicon.ico --> 
-		<link rel="icon" type="image/x-icon" href="http://soccerperformance10x.appspot.com/Pictures/favicon.ico" />
-		<link rel="shortcut icon" type="image/x-icon" href="http://soccerperformance10x.appspot.com/Pictures/favicon.ico" />
+		<link rel="shortcut icon" type="image/x-icon" href="Pictures/favicon.ico" />
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -16,13 +15,12 @@
 
 		<link href="css/website.css" rel="stylesheet">
 		<link href="css/formstyle.css" rel="stylesheet">
-		
 		<!-- Latest compiled and minified JavaScript -->
-		<script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script type="text/javascript" src="jquery/post_contact.js"></script>
-
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 		<script src='https://www.google.com/recaptcha/api.js'></script>
 	</head>
 	
@@ -138,12 +136,17 @@
 				<h4>Leave us your information and we will contact you back within one day.</h4>
 			</header>
 			<BR></BR>
+			<div id="resultMessage">
+
+
+			</div>
 		    
+		    <BR></BR>
 			<!--Contact form -->
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<div id="contact-area">
 				
-				<form name="contactForm" action="/process_post" method="post" novalidate="novalidate">
+				<form name="contact" id="contactForm" method="post" novalidate="novalidate">
 				
 					<div style="display: none;">
 						<input type="hidden" name="_wpcf7" value="1943"/>
@@ -173,7 +176,7 @@
 								
 								<span class="wpcf7-form-control-wrap email">
 								<!--email -->
-								<input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control" id="email" aria-required="true" aria-invalid="false"/></span>
+								<input type="email" name="email" id="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control" id="email" aria-required="true" aria-invalid="false"/></span>
 							</div>
 						</div>
 					</div>
@@ -185,7 +188,7 @@
 							
 								<span class="wpcf7-form-control-wrap phone">
 								<!--phone -->
-								<input type="text" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-phone wpcf7-validates-as-required wpcf7-validates-as-phone form-control" id="phone" aria-required="true" aria-invalid="false"/></span>
+								<input type="text" id="phoneNumber" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-phone wpcf7-validates-as-required wpcf7-validates-as-phone form-control" id="phone" aria-required="true" aria-invalid="false"/></span>
 							</div>
 						</div>
 					</div>
@@ -193,7 +196,7 @@
 					<div class="checkbox">
   						<label>
   						
-    					<input type="checkbox" name="update" checked, value="true">
+    					<input type="checkbox" id="subscribe" name="update" checked, value="true">
     						&nbsp;&nbsp;&nbsp;&nbsp; Subscribe to great Deals and Newsletters
   						</label>
 					</div>
@@ -202,7 +205,7 @@
 						<div class="form-group">
 							<label for="message" class="col-sm-3 control-label">Your Message <span class="text-danger">*</span></label>
 							<div class="col-sm-9">
-								<span class="wpcf7-form-control-wrap message"><textarea name="message" cols="40" rows="5" class="form-control" id="message" aria-required="true" aria-invalid="false"></textarea></span>
+								<span class="wpcf7-form-control-wrap message"><textarea name="message" id="message" cols="40" rows="5" class="form-control" id="message" aria-required="true" aria-invalid="false"></textarea></span>
 							</div>
 						</div>
 					</div>
@@ -217,7 +220,7 @@
 
 					<div class="form-group">
 						<div class="col-sm-offset-3 col-sm-9">
-							<input type="submit" value="Send Message" style="position: relative; left: -10px" class="btn btn-primary btn-lg active"/>
+							<input type="submit" id="submitButton" value="Send Message" style="position: relative; left: -10px" class="btn btn-primary btn-lg active"/>
 						</div>
 					</div>
 

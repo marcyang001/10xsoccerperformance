@@ -1,56 +1,67 @@
-$(function(){               
-    $('#submitButton').click(function(e){
-        e.preventDefault();
-        console.log('submit clicked');
+$(function(){     
 
-        var data = {};
-        data.destination = $('#destination option:selected').val();
-        data.passport = $('#passport option:selected').val();
-        data.duration = $('#duration option:selected').val();
+
+
+        $('#submitButton').click(function(e){
+            e.preventDefault();
+            console.log('submit clicked');
+
+
+
+            var contact = {};
+            contact.name = $('#name').val();
+            contact.email = $('#email').val();
+            contact.phone = $('#phoneNumber').val();
+            contact.subscribe = false;
+            contact.message = $("#message").val();
+            
+            contact.recaptcha = $("#g-recaptcha-response").val();
+
+
+
+            if($("input#subscribe").is(":checked")) {
+                contact.subscribe = true;
+            }
+            
+                    $.ajaxSetup(
+                    {
+                        cache: false
+                    });
                     
-
-        $.ajax({
-                type: 'POST',
-                data: data,
-                contentType: 'application/json',
-                url: '/process',                   
-                success: function(data) {
-                            console.log('success');
-                            console.log(data);
-
-                            var output, i;
-                            var cost = 0;
-                            if (data[0] != undefined) {
-                                cost = data[0].cost;
-                            }
-
-                            output="<ul><li><strong>Application Fee:</strong> "+cost+"</li>"+
-                                    "<li><strong>Required Forms:</strong></li>";
-                            
-                            if (data[0] != undefined) {
-                                var forms=data[0]["requiredocs"].split(',');
-
-
-                            
-                                output+="<ul>";
-                                forms.map(function(item) {
-                                    output=output+"<li>"+item+"</li>";
-                                });
-                                output+="</ul>";
+                    $.ajax({
+                        type: 'POST',
+                        data: contact,
+                        dataType: 'json',
+                        url: '/process_post',                   
+                        success: function(data) {
+                            var output; 
+                            if (data.message.localeCompare("error") == 0) {
+                                console.log("emit failure message");
                                 
+                                output="<p class=\"alert alert-danger\" > \
+                                            <strong>Failed to send message. Please enter a name with valid e-mail or phone and check recaptcha. </strong> \
+                                        </p>"
                             }
-                            output+="</ul>";
-                            
-                            document.getElementById("result").innerHTML=output;
-                            
+                            else {
+                                console.log('emit success message');
+                               
+                                output= "<p class=\"alert alert-success\" > \
+                                            <strong>Message has received successfully!</strong> Thank you and stay tuned!\
+                                        </p>"
+                                $('#contactForm').trigger("reset");
+
+                            }
+
+                            $("#resultMessage").html(output);
+                            grecaptcha.reset();
 
 
-
+                        },
+                        error: function(error) {
+                            console.log(error);
                         }
                     });
 
 
-
-
-                });             
-            });
+        });             
+});

@@ -59,16 +59,16 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
           validemail = validateEmail();
 
           if (response.name == '' || (!validemail) || (!validphone)) {
-            fs.readFile(__dirname + '/html/messageFailed.html', function(err, html){
-                  console.log("enter error page!!!!");
-                  if(err){
-                      console.log(err);
-                  }else{
+            
+              console.log("enter error page!!!!");
+              if(err){
+                console.log(err);
+              }else{
                     
-                      data = {"message":"error"};
-                      res.send(data);
-                  }
-              });
+                  data = {"message":"error"};
+                  res.send(data);
+              }
+              
 
           }else { 
               title = 'Message from sender: ' + response['name'];

@@ -10,6 +10,8 @@ Here is the url: .
 http://www.10xsoccerperformance.com
 
 Running The app on your local machine
+	
+	Install Node and npm in your local machine
 
     Install dependencies for this project by entering the following command:
 

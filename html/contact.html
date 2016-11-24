@@ -1,256 +1,164 @@
 <!DOCTYPE html>
-<html>
-	<head>
-    	<meta charset="utf-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>10X Soccer Performance</title>
+<html lang="en">
 
-		<!-- favicon.ico --> 
-		<link rel="shortcut icon" type="image/x-icon" href="Pictures/favicon.ico" />
+<head>
 
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-   		
-		
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-		<link href="css/website.css" rel="stylesheet">
-		<link href="css/formstyle.css" rel="stylesheet">
-		<!-- Latest compiled and minified JavaScript -->
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-		<script type="text/javascript" src="jquery/post_contact.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <title>Contact - 10X Soccer Performance</title>
 
-		<script src='https://www.google.com/recaptcha/api.js'></script>
-	</head>
-	
-	
-	<body>
-			<div class="wrapper">
-					<div class="navbar-header">
-			            <span class="icon-bar"></span>
-			            <span class="icon-bar"></span>
-			            <span class="icon-bar"></span>
-		        	</div>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-					<nav id="mainNavbar">
-						<div class="social-media-icons">
-						<ul class="navright">
-							<li><a href="https://www.facebook.com/10XSoccerPerformance" target="_blank"><img src="./Pictures/social-media-icons/facebook.png" alt="Facebook" style="border: 0;"/></a></li>
-							<li><a href="https://twitter.com/10XSoccer" target="_blank"><img src="./Pictures/social-media-icons/twitter.png" alt="Twitter" style="border: 0;"/></a></li>
-							<li><a href="https://www.youtube.com/user/BakanD" target="_blank"><img src="./Pictures/social-media-icons/youtube.png" alt="Youtube" style="border: 0;"/></a></li>
-							<li><a href="https://instagram.com/"><img src="./Pictures/social-media-icons/instagram.png" alt="Instagram" style="border: 0;"/></a></li>
-						</ul>
-						</div>
-					</nav>
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
 
-				<div id="logogrid">
-					<div id="title"><span class="10X">10X</span> <span class="soccer"> SOCCER PERFORMANCE</span></div>
-					<a href="http://www.10xsoccerperformance.com"><img id="logopic" src="./Pictures/mainlogo.png" alt="Player heading the ball logo"/></a>
-				</div>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
+</head>
 
-			
-		<!--Tabs  -->		
-				<nav class="navbar navbar-default">
-				  <div class="container-fluid">
-				    <div class="navbar-header">
-				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				        <span class="sr-only">Toggle navigation</span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				      </button>
-				      <a class="navbar-brand" href="index.html">10X Soccer</a>
-				    </div>
+<body>
 
-				    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" role="navigation" aria-expanded="false" style="height: 1px;">
-				      <ul class="nav navbar-nav">
-				      	<li ><a class="btn" href="about.html">About</a></li>
-				        <li><a class="btn" href="schedule.html">Schedule</a></li>
-				        <li>
-				          <a class="btn" href="contact.html">Contact</a>
-				        </li>
-				        <li><a class="btn" href="book.html">Book now</a></li>
-				      </ul>
-				      <form class="navbar-form navbar-left" role="search">
-				        <div class="form-group">
-				          <input  name="result" type="text" id="mySearch" class="form-control" placeholder="Search results">
-				        </div>
-				        <button onclick="searchResults()" type="submit" class="btn btn-default">Search</button>
-				      </form>
-				      	<ul class="nav navbar-nav navbar-right">
-        					<li><a class="btn" href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        					<li><a class="btn" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      					</ul>
+    <div class="brand"><span class="10X">10X</span> <span class="soccer"> SOCCER PERFORMANCE</span></div>
+    <div class="address-bar">Private Soccer Training Program | Montreal, QC</div>
 
-				    </div>
-				  </div>
-				</nav>
-					<script>
-								
-						function searchResults() {
-							var r, result; 
-							//var re = /(\w+)\s(\w+)/;
-							//get the value of the input 
-							result = document.getElementById('mySearch').value;
-							//var res = new RegExp('ab+c', 'i');
-							if (result == '' || result == ' ' || result == '  '){
-								//alert('hello')
-							}
-							//open the window in google with the search input
-							else {
-								window.open('http://google.com/search?q='+result);
-							}
-						}
-					</script>
-			<header class="entry-header" style="position: relative; left: 30px">
-				<h1> Contact Info</h1>
-			
-				<p>10X Soccer Performance:
-					  438 - 927 - 0110
-				</p>
-				<p>
-				Email: 10xsoccerperformance@gmail.com
-				</p>
-			</header>
-			<BR></BR>
-			<nav id="subscribelogos">
-				<div class="socialLogos">
-					<ul class="navright">
-						<li><a href="https://www.facebook.com/10XSoccerPerformance" target="_blank"><img src="./Pictures/social-media-icons/facebook.png" alt="Facebook" style="border: 0;"/></a></li>
-						<li><a href="https://twitter.com/10XSoccer" target="_blank"><img src="./Pictures/social-media-icons/twitter.png" alt="Twitter" style="border: 0;"/></a></li>
-						<li><a href="https://www.youtube.com/user/BakanD" target="_blank"><img src="./Pictures/social-media-icons/youtube.png" alt="Youtube" style="border: 0;"/></a></li>
-						<li><a href="https://instagram.com/"><img src="./Pictures/social-media-icons/instagram.png" alt="Instagram" style="border: 0;"/></a></li>
-						</ul>
-				</div>
-			</nav>
-					<p style="position: relative; left: 30px">-------------------------------------------------------------------</p>
-					
-			<BR></BR>
-			<BR></BR>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Business Casual</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="book.html">Booking</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-			<header style="position: relative; left: 30px" class="entry-header">
-				<h1> Contact Us</h1>
-				<h4>Leave us your information and we will contact you back within one day.</h4>
-			</header>
-			<BR></BR>
-			<div id="resultMessage">
+    <div class="container">
 
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Contact
+                        <strong>business casual</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-md-8">
+                    <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
+                    <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+                </div>
+                <div class="col-md-4">
+                    <p>Phone:
+                        <strong>123.456.7890</strong>
+                    </p>
+                    <p>Email:
+                        <strong><a href="mailto:name@example.com">name@example.com</a></strong>
+                    </p>
+                    <p>Address:
+                        <strong>3481 Melrose Place
+                            <br>Beverly Hills, CA 90210</strong>
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
 
-			</div>
-		    
-		    <BR></BR>
-			<!--Contact form -->
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<div id="contact-area">
-				
-				<form name="contact" id="contactForm" method="post" novalidate="novalidate">
-				
-					<div style="display: none;">
-						<input type="hidden" name="_wpcf7" value="1943"/>
-						<input type="hidden" name="_wpcf7_version" value="4.1.1"/>
-						<input type="hidden" name="_wpcf7_locale" value="en_US"/>
-						<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f1943-p1713-o1"/>
-						<input type="hidden" name="_wpnonce" value="e652d0a903"/>
-					</div>
-					
-					<div class="form-horizontal">
-						<div class="form-group">
-							<label for="name" class="col-sm-3 control-label">Your Name<span class="text-danger">*</span></label>
-							<div class="col-sm-9">
-						
-								<span class="wpcf7-form-control-wrap name">
-								<!--name --> 
-								<input type="text" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" id="name" aria-required="true" aria-invalid="false"/>
-								</span>
-							</div>
-						</div>
-					</div>
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Contact
+                        <strong>form</strong>
+                    </h2>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, vitae, distinctio, possimus repudiandae cupiditate ipsum excepturi dicta neque eaque voluptates tempora veniam esse earum sapiente optio deleniti consequuntur eos voluptatem.</p>
+                    <form role="form">
+                        <div class="row">
+                            <div class="form-group col-lg-4">
+                                <label>Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label>Email Address</label>
+                                <input type="email" class="form-control">
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label>Phone Number</label>
+                                <input type="tel" class="form-control">
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="form-group col-lg-12">
+                                <label>Message</label>
+                                <textarea class="form-control" rows="6"></textarea>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <input type="hidden" name="save" value="contact">
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-					<div class="form-horizontal">
-						<div class="form-group">
-							<label for="email" class="col-sm-3 control-label">Your Email <span class="text-danger">*</span></label>
-							<div class="col-sm-9">
-								
-								<span class="wpcf7-form-control-wrap email">
-								<!--email -->
-								<input type="email" name="email" id="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control" id="email" aria-required="true" aria-invalid="false"/></span>
-							</div>
-						</div>
-					</div>
+    </div>
+    <!-- /.container -->
 
-					<div class="form-horizontal">
-						<div class="form-group">
-							<label for="phone" class="col-sm-3 control-label">Phone Number <span class="text-danger">*</span></label>
-							<div class="col-sm-9">
-							
-								<span class="wpcf7-form-control-wrap phone">
-								<!--phone -->
-								<input type="text" id="phoneNumber" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-phone wpcf7-validates-as-required wpcf7-validates-as-phone form-control" id="phone" aria-required="true" aria-invalid="false"/></span>
-							</div>
-						</div>
-					</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; 10X Soccer Performance 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-					<div class="checkbox">
-  						<label>
-  						
-    					<input type="checkbox" id="subscribe" name="update" checked, value="true">
-    						&nbsp;&nbsp;&nbsp;&nbsp; Subscribe to great Deals and Newsletters
-  						</label>
-					</div>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
 
-					<div class="form-horizontal">
-						<div class="form-group">
-							<label for="message" class="col-sm-3 control-label">Your Message <span class="text-danger">*</span></label>
-							<div class="col-sm-9">
-								<span class="wpcf7-form-control-wrap message"><textarea name="message" id="message" cols="40" rows="5" class="form-control" id="message" aria-required="true" aria-invalid="false"></textarea></span>
-							</div>
-						</div>
-					</div>
-					<div class="form-horizontal">
-						<div class="form-group">
-							<div class="col-sm-offset-3 col-sm-9" style="margin: auto; left: 40%; right: -40%;">
-								<div class="g-recaptcha" data-sitekey="6Lf_vSETAAAAADEafVeap4G0Bpx0nBmtas5ESfm2"></div>
-							</div>
-						</div>
-					</div>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 
-
-					<div class="form-group">
-						<div class="col-sm-offset-3 col-sm-9">
-							<input type="submit" id="submitButton" value="Send Message" style="position: relative; left: -10px" class="btn btn-primary btn-lg active"/>
-						</div>
-					</div>
-
-					<div class="wpcf7-response-output wpcf7-display-none"></div>
-
-				</form>
-			</div>
-			<!--Contact form ends -->
-			
-				<BR></BR>
-				<BR></BR>
-				<BR></BR>
-				<div class="footer" role="contentinfo">
-        			&copy; Copyright 2016, 10X Soccer Performance.
-    			</div>
-			</div>
-			
-				
-
-
-		<!-- Wrapper class ends-->
-			</div>
-		<!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-
-
-	</body>
+</body>
 
 </html>

@@ -71,6 +71,9 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
               
 
           }else { 
+
+            console.log("everything is good");
+            /*
               title = 'Message from sender: ' + response['name'];
               message = 'email: ' + response['email'] + '\n' +
                     'phone: '+ response['phone'] + '\n' + 
@@ -90,12 +93,12 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
                           res.send(data);
                       }
                   });
-      
+            */
           }
 
           //if re-captcha fails
         } else {
-         
+            console.log("recaptcha fails")
             data = {"message":"error"};
             res.send(data);
         }

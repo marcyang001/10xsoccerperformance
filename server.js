@@ -4,7 +4,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var https = require('https');
 // [START setup]
-var api_key = 'key-4ad1de3b4cc58f18725c7ae4719cd0fe';
+var api_key = 'key-dd61880d10fe2238e4f11c024671f57e';
 var Mailgun = require('mailgun').Mailgun;
 var mg = new Mailgun(api_key);
 
@@ -28,7 +28,7 @@ function getClientAddress(req) {
 
 app.get('/',function (request, response) {
 	
-	console.log('request from' + getClientAddress(request) + " " + request.url);
+	console.log('request from ' + getClientAddress(request) + " " + request.url);
 	response.sendFile( __dirname + '/html/index.html')
 
 });
@@ -40,67 +40,67 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
        name:req.body.name,
        email:req.body.email,
        phone:req.body.phone,
-       update:req.body.update,
+       update:req.body.subscribe,
        message:req.body.message,
        recaptcha: req.body.recaptcha
     };
 
+    remoteip = getClientAddress(req);
 
-    verifyRecaptcha(response.recaptcha, function(success) {
+    verifyRecaptcha(response.recaptcha, remoteip, function(success) {
         
-
-
         if (success) {
           // TODO: do registration using params in req.body
             // Prepare output in JSON format
       
 
-          validphone = validPhone();
-          validemail = validateEmail();
+              validphone = validPhone();
+              validemail = validateEmail();
 
-          if (response.name == '' || (!validemail) || (!validphone)) {
-            
-              console.log("enter error page!!!!");
-              if(err){
-                console.log(err);
-              }else{
-                    
-                  data = {"message":"error"};
-                  res.send(data);
+              if (response.name == '' || (!validemail) || (!validphone)) {
+                
+                  console.log("[WARN]: enter error page!!!!");
+                  if(err){
+                    console.log(err);
+                  }else{
+                        
+                      data = {"message":"error"};
+                      res.send(data);
+                  }
+                  
+
+              }else { 
+                
+                  var title = 'Message from potential client: ' + response['name'];
+                  var message = 'email: ' + response['email'] + '\n' +
+                                'phone: '+ response['phone'] + '\n' + 
+                                'update: ' + response['update'] + '\n' + 
+                                'message: \n' + response['message'] + '\n';
+                  
+                  var recipients = ['10X Soccer Performance <10xsoccerperformance@gmail.com>'];
+                  console.log("Sending email to " + recipients)
+                
+                  mg.sendText('10X Soccer<postmaster@sandbox89d24255fa0e44ba8d22681c98ff8234.mailgun.org>', 
+                        recipients,
+                        title,
+                        message,
+                        '10xsoccerperformance@gmail.com', {},
+                        function(err) {
+                          if (err) {
+                            console.log('[WARN]: failed to send ' + err);
+                          }
+                          else {
+                              data = {"message":"success"};
+                              res.send(data);
+                          }
+                      });
               }
-              
-
-          }else { 
-
-            console.log("everything is good");
-            /*
-              title = 'Message from sender: ' + response['name'];
-              message = 'email: ' + response['email'] + '\n' +
-                    'phone: '+ response['phone'] + '\n' + 
-                    'update: ' + response['update'] + '\n' + 
-                    'message: \n' + response['message'] + '\n';
-              
-            console.log("enter here success")
-            
-            mg.sendText('10X<postmaster@sandbox89d24255fa0e44ba8d22681c98ff8234.mailgun.org>', ['10X Soccer Performance <10xsoccerperformance@gmail.com>'],
-                    title,
-                    message,
-                    '10xsoccerperformance@gmail.com', {},
-                    function(err) {
-                      if (err) console.log('Oh noes: ' + err);
-                      else {
-                          data = {"message":"success"};
-                          res.send(data);
-                      }
-                  });
-            */
-          }
-
-          //if re-captcha fails
-        } else {
-            console.log("recaptcha fails")
-            data = {"message":"error"};
-            res.send(data);
+        } 
+        //if re-captcha fails
+        else {
+              console.log("[WARN]: enter recaptcha fails")
+              data = {"message":"error"};
+              res.send(data);
         }
     });
 	 
@@ -132,10 +132,10 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
   	};
 
 
-    function verifyRecaptcha(key, callback) {
+    function verifyRecaptcha(key, remoteip, callback) {
       var SECRET = "6Lf_vSETAAAAAET5V7yNLOKSxVRD2fsKMOP0oBFD";
 
-      https.get("https://www.google.com/recaptcha/api/siteverify?secret=" + SECRET + "&response=" + key, function(res) {
+      https.get("https://www.google.com/recaptcha/api/siteverify?secret=" + SECRET + "&response=" + key + "&remoteip="+remoteip, function(res) {
           var data = "";
           res.on('data', function (chunk) {
               data += chunk.toString();

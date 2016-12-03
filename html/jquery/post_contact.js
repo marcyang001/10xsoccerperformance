@@ -2,12 +2,11 @@ $(function(){
 
 
 
-        $('#submitButton').click(function(e){
+        $('#submitButtoncd').click(function(e){
             e.preventDefault();
-            console.log('submit clicked');
-
-
-
+            
+            console.log("submission clicked")
+            
             var contact = {};
             contact.name = $('#name').val();
             contact.email = $('#email').val();
@@ -17,12 +16,13 @@ $(function(){
             
             contact.recaptcha = $("#g-recaptcha-response").val();
 
-
-
+            //console.log(contact);
+            
             if($("input#subscribe").is(":checked")) {
                 contact.subscribe = true;
             }
             
+            console.log(contact)
                     $.ajaxSetup(
                     {
                         cache: false
@@ -34,6 +34,7 @@ $(function(){
                         dataType: 'json',
                         url: '/process_post',                   
                         success: function(data) {
+                            console.log('message received');
                             var output; 
                             if (data.message.localeCompare("error") == 0) {
                                 console.log("emit failure message");
@@ -61,7 +62,6 @@ $(function(){
                             console.log(error);
                         }
                     });
-
 
         });             
 });

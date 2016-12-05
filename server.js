@@ -57,8 +57,8 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
     remoteip = getClientAddress(req);
 
     verifyRecaptcha(_response.recaptcha, remoteip, function(success) {
-        var s = 1
-        if (s==1) {
+      
+        if (success) {
       
               validphone = validPhone();
               validemail = validateEmail();

@@ -5,8 +5,8 @@ var bodyParser = require('body-parser');
 var https = require('https');
 // [START setup]
 var api_key = 'key-dd61880d10fe2238e4f11c024671f57e';
-var Mailgun = require('mailgun').Mailgun;
-var mg = new Mailgun(api_key);
+var domain = 'sandbox89d24255fa0e44ba8d22681c98ff8234.mailgun.org';
+var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
 // [END setup]
 
@@ -16,16 +16,19 @@ var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 // Create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-
 var app = express();
 
-
+// [ Global functions region ]
 
 function getClientAddress(req) {
   return req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 }
 
+// [ End of Global Functions ]
 
+
+// [ Requests Handlers Region ]
+// load the index.html page
 app.get('/',function (request, response) {
 	
 	console.log('request from ' + getClientAddress(request) + " " + request.url);
@@ -33,10 +36,16 @@ app.get('/',function (request, response) {
 
 });
 
+// serves static files 
+app.get(/^(.+)$/, function(req, res){ 
+     res.sendFile( __dirname +"/html/"+ req.params[0]); 
+});
+
+// handle the request from contact form submission
 app.post('/process_post', urlencodedParser, function (req, res, next) {
 
 
-    response = {
+    var _response = {
        name:req.body.name,
        email:req.body.email,
        phone:req.body.phone,
@@ -47,55 +56,55 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
 
     remoteip = getClientAddress(req);
 
-    verifyRecaptcha(response.recaptcha, remoteip, function(success) {
-        
-        if (success) {
-          // TODO: do registration using params in req.body
-            // Prepare output in JSON format
+    verifyRecaptcha(_response.recaptcha, remoteip, function(success) {
+        var s = 1
+        if (s==1) {
       
-
               validphone = validPhone();
               validemail = validateEmail();
 
-              if (response.name == '' || (!validemail) || (!validphone)) {
+              if (_response.name == '' || (!validemail) || (!validphone)) {
                 
                   console.log("[WARN]: enter error page!!!!");
                   if(err){
                     console.log(err);
                   }else{
                         
-                      data = {"message":"error"};
+                      var data = {"message":"error"};
                       res.send(data);
                   }
                   
+              }else {
 
-              }else { 
-                
-                  var title = 'Message from potential client: ' + response['name'];
-                  var message = 'email: ' + response['email'] + '\n' +
-                                'phone: '+ response['phone'] + '\n' + 
-                                'update: ' + response['update'] + '\n' + 
-                                'message: \n' + response['message'] + '\n';
+                  var title = 'Message from potential client: ' + _response['name'];
+                  var message = 'email: ' + _response['email'] + '\n' +
+                                'phone: '+ _response['phone'] + '\n' + 
+                                'update: ' + _response['update'] + '\n' + 
+                                'message: \n\n' + _response['message'] + '\n';
+                  var sender = '10X Soccer<10xsoccerperformance@gmail.com>';
+                  var recipients = '10X Soccer Performance<10xsoccerperformance@gmail.com>';
                   
-                  var recipients = ['10X Soccer Performance <10xsoccerperformance@gmail.com>'];
-                  console.log("Sending email to " + recipients)
-                
-                  mg.sendText('10X Soccer<postmaster@sandbox89d24255fa0e44ba8d22681c98ff8234.mailgun.org>', 
-                        recipients,
-                        title,
-                        message,
-                        '10xsoccerperformance@gmail.com', {},
-                        function(err) {
-                          if (err) {
-                            console.log('[WARN]: failed to send ' + err);
-                          }
-                          else {
-                              data = {"message":"success"};
-                              res.send(data);
-                          }
-                      });
+                  var email_setup = {
+                    from: sender,
+                    to: recipients,
+                    subject: title,
+                    text: message
+                  };
+                  
+                  console.log("［INFO]: Sending email to " + recipients)
+                  
+                  mailgun.messages().send(email_setup, function (error, body) {
+                      if (error) {
+                            console.log('[WARN]: failed to send ' + error);
+                      }
+                      else {
+                        console.log(body)
+                        var data = {"message":"success"};
+                        res.send(data);
+                      }
+                  });
               }
-        } 
+        }
         //if re-captcha fails
         else {
               console.log("[WARN]: enter recaptcha fails")
@@ -107,28 +116,28 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
 
 
   	function validateEmail() {
-  		var a = true;
-  		if (response["email"] == '') {
-  			a = false;
+  		var isValidEmail = true;
+  		if (_response["email"] == '') {
+  			isValidEmail = false;
   		}
-  		else if (response["email"].toString().indexOf("@") < 0) {
-  			a = false;
+  		else if (_response["email"].toString().indexOf("@") < 0) {
+  			isValidEmail = false;
   		}
-  		return a;
+  		return isValidEmail;
   	};
 
 
   	function validPhone() {
-  		var a = true;
-  		exp = /\d/;
+  		  var isValidPhoneNumber = true;
+  		  exp = /\d/;
   		
-      if (response["phone"] == '') {
-        a = true;
-      }
-      else if (!exp.test(response["phone"].toString())){
-  			a = false;
-  		}
-  		return a
+        if (_response["phone"] == '') {
+          isValidPhoneNumber = true;
+        }
+        else if (!exp.test(_response["phone"].toString())){
+  			 isValidPhoneNumber = false;
+  		  }
+  		  return isValidPhoneNumber;
   	};
 
 
@@ -151,23 +160,15 @@ app.post('/process_post', urlencodedParser, function (req, res, next) {
           });
       });
     };
-   
-   
+
 });
 
-/* serves all the static files */
- app.get(/^(.+)$/, function(req, res){ 
-     res.sendFile( __dirname +"/html/"+ req.params[0]); 
- });
+// [ End Request Handlers Region ]
 
 
-
-
-
+// [START server]
 if (module === require.main) {
-  // [START server]
-  // Start the server
-  	var server = app.listen(server_port, server_ip_address, function () {
+    var server = app.listen(server_port, server_ip_address, function () {
     var host = server.address().address;
     var port = server.address().port;
 
@@ -175,8 +176,7 @@ if (module === require.main) {
     console.log('Press Ctrl+C to quit.');
 
   });
-  // [END server]
 }
 
+// [END server]
 module.exports = app;
-
